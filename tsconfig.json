@@ -32,6 +32,9 @@
       "@/providers/*": ["providers/*"],
       "@/hoc/*": ["hoc/*"],
       "@/pages/*": ["pages/*"],
+      "@/actions/*": ["redux/actions/*"],
+      "@/reducers/*": ["redux/reducers/*"],
+      "@/types/*": ["redux/types/*"],
       "@/redux/*": ["redux/*"],
       "@/services/*": ["services/*"]
     },
