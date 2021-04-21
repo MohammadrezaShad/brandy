@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DefaultLayout = ({ children }) => <>{children}</>;
+const DefaultLayout = ({ children, deviceType }) => <>{children}</>;
 
-export const getDefaultLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
+export const getDefaultLayout = (page, deviceType) => <DefaultLayout deviceType={deviceType}>{page}</DefaultLayout>;
 
 export default DefaultLayout;
