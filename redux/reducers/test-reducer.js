@@ -1,4 +1,4 @@
-import { SET_NAME } from '@/redux/types/test-types';
+import { SET_NAME } from '@/types/test-types';
 
 const test = (
   state = {
