@@ -52,6 +52,7 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/require-default-props': 'off',
     'no-unused-vars': ['error'],
     semi: ['error', 'always'],
     'jsx-a11y/anchor-is-valid': [
