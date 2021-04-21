@@ -5,12 +5,13 @@ import { ThemeProvider } from 'styled-components';
 import ThemeContext from '@/context/theme-context';
 import { getCookie, setCookie } from '@/helpers/cookie';
 import MainLayout from '@/layouts/main-layout/main-layout';
-import GlobalStyle from '@/providers/GlobalStyle';
+import GlobalStyle from '@/providers/theme/GlobalStyle';
 import darkTheme from '@/providers/theme/theme.dark';
 import lightTheme from '@/providers/theme/theme.light';
 import { reduxWrap } from '@/redux/store';
+import CheckUserAgent from '@/utils/check-user-agent';
 
-function App({ Component, pageProps, previousTheme }) {
+function App({ Component, pageProps, previousTheme, deviceType }) {
   const [theme, setTheme] = React.useState(previousTheme);
 
   const toggleTheme = async () => {
@@ -40,18 +41,23 @@ function App({ Component, pageProps, previousTheme }) {
           {({ theme: themeValue }) => (
             <ThemeProvider theme={getTheme(themeValue)}>
               <GlobalStyle />
-              <Component toggleTheme={toggleTheme} {...pageProps} />
+              <Component deviceType={deviceType} {...pageProps} />
             </ThemeProvider>
           )}
         </ThemeContext.Consumer>
       </ThemeContext.Provider>
     </>,
+    deviceType,
   );
 }
 
 App.getInitialProps = async ({ Component, ctx }) => {
   let pageProps = {};
   let previousTheme = null;
+  const userAgent = ctx.req.headers['user-agent'];
+
+  const deviceType = CheckUserAgent(userAgent);
+
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
@@ -61,6 +67,7 @@ App.getInitialProps = async ({ Component, ctx }) => {
   return {
     pageProps,
     previousTheme,
+    deviceType,
   };
 };
 
