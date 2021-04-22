@@ -61,6 +61,6 @@ export default createGlobalStyle`
       appearance: none;
       font-family: "Dana";
    }
-      #root{height: 100%;}
+      #__next{height: 100%;}
 
 `;
