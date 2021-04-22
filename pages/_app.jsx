@@ -34,20 +34,18 @@ function App({ Component, pageProps, previousTheme, deviceType }) {
   };
 
   const getLayout = Component.getLayout || ((page) => <MainLayout>{page}</MainLayout>);
-  return getLayout(
-    <>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <ThemeContext.Consumer>
-          {({ theme: themeValue }) => (
-            <ThemeProvider theme={getTheme(themeValue)}>
-              <GlobalStyle />
-              <Component deviceType={deviceType} {...pageProps} />
-            </ThemeProvider>
-          )}
-        </ThemeContext.Consumer>
-      </ThemeContext.Provider>
-    </>,
-    deviceType,
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ThemeProvider theme={getTheme(theme)}>
+        {getLayout(
+          <>
+            <GlobalStyle />
+            <Component deviceType={deviceType} {...pageProps} />
+          </>,
+          deviceType,
+        )}
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 }
 
