@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-  position: sticky;
-  top: 0;
   padding: ${({ theme }) => theme.dim[2]};
   background-color: ${({ theme }) => theme.palette.onBack};
 `;
