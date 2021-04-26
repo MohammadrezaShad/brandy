@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="Icon" transform="translate(-372 -501)">
+    <g id="Rectangle" transform="translate(372 501)" fill="none" stroke="#000" stroke-width="1">
+      <rect width="12" height="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="11" height="11" fill="none"/>
+    </g>
+    <path id="Subtraction" d="M10.063,10.7H0V9.717H8.973V0h1.09V10.7Z" transform="translate(377.938 506.299)"/>
+  </g>
+</svg>
