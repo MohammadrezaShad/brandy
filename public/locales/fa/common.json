@@ -1,3 +1,18 @@
 {
-  "title": "brandyTo"
+  "title": "brandyTo",
+  "code": "کد",
+  "specifications": "مشخصات",
+  "features": "ویژگی ها",
+  "description": "توضیحات",
+  "addToCard": "افزودن به سبد خرید",
+  "color": "رنگ",
+  "otherColors": "رنک دیگر",
+  "sizeGuide": "راهنمای سایز",
+  "sizing": "راهنمای سایز",
+  "product": "محصول",
+  "reviews": "بازخوردها",
+  "similarProducts": "کالاهای مشابه",
+  "newProduct": "New 2021",
+  "submitReview": "ثبت نظر",
+  "sizeQuestion": "آیا سایز این کالا مناسب شما بود ؟"
 }
