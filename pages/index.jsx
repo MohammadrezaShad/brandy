@@ -9,7 +9,6 @@ import Client from '@/views/home/client';
 import Mobile from '@/views/home/mobile';
 
 const Home = ({ deviceType }) => (
-  // const { t } = useTranslation('common');
   // const { name } = useSelector((state) => state.test);
   <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>
 );
