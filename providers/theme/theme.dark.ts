@@ -63,6 +63,8 @@ const typography = {
 const defaults = {
   fontName: 'Dana',
   direction: 'rtl',
+  borderRadius: '8px',
+  borderRadiusVariant: '4px',
 };
 const mediaQueries = (breakPoint: string): string => `@media only screen and (max-width: ${breakPoint})`;
 

@@ -32,6 +32,8 @@ declare module 'styled-components' {
     defaults: {
       fontName: string;
       direction: string;
+      borderRadius: string;
+      borderRadiusVariant: string;
     };
     typography: {
       headline1: string;
