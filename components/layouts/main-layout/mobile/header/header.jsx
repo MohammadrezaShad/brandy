@@ -1,5 +1,4 @@
 import React from 'react';
-import { v4 } from 'uuid';
 
 import CardIcon from '@/assets/vectors/Bag.svg';
 import Logo from '@/assets/vectors/Logo.svg';
@@ -11,11 +10,9 @@ const Header = () => (
   <S.Wrapper>
     <S.Content>
       <S.MenuIcon>
-        {Array(3)
-          .fill()
-          .map(() => (
-            <S.MenuIconLayout key={v4()} />
-          ))}
+        {Array.from({ length: 3 }, (_, i) => i + 1).map((id) => (
+          <S.MenuIconLayout key={id} />
+        ))}
       </S.MenuIcon>
       <S.HeaderIcon as={IconProvider} icon="search" size="20px" />
       <S.LogoWrap>
