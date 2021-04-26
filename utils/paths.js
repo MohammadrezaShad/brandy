@@ -20,6 +20,14 @@ class Uri {
 
 class Paths {
   static home = new Uri('/');
+
+  static product = class {
+    static detail(id) {
+      return new Uri(`/product/${id}`, '/brand/:id');
+    }
+
+    static home = new Uri('/product');
+  };
 }
 
 export default Paths;
