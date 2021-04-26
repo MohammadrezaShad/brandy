@@ -1,27 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-      @font-face {
-      font-family: "Dana";
-        src: url("/font/dana/dana-fanum-regular.eot");
-        src: url("/font/dana/dana-fanum-regular.woff2") format('woff2'),
-              url("/font/dana/dana-fanum-regular.woff") format('woff'),
-              url("/font/dana/dana-fanum-regular.ttf") format('truetype');
-        font-weight: normal;
-        font-display:fallback;
-      }
-
-
-      @font-face {
-      font-family: "Dana";
-        src: url("/font/dana/dana-fanum-medium.eot");
-        src: url("/font/dana/dana-fanum-medium.woff2") format('woff2'),
-              url("/font/dana/dana-fanum-medium.woff") format('woff'),
-              url("/font/dana/dana-fanum-medium.ttf") format('truetype');
-        font-weight: bold;
-        font-display:fallback;
-      }
-
    *{
       padding: 0;
       margin: 0;
@@ -36,6 +15,7 @@ export default createGlobalStyle`
    html{
     height: 100%;
     font-size: 10px;
+    scroll-behavior:smooth;
    }
 
    body{
@@ -46,6 +26,7 @@ export default createGlobalStyle`
       &::-webkit-scrollbar-thumb{background-color:#666}
       &::-webkit-scrollbar-track{background-color:#e0e0e0}
       &:hover::-webkit-scrollbar-thumb{background-color:#555}
+      overflow-x:hidden;
    }
 
    input{
