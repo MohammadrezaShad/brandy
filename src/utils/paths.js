@@ -28,6 +28,18 @@ class Paths {
 
     static home = new Uri('/product');
   };
+
+  static card = class {
+    static info() {
+      return new Uri(`/card/info`);
+    }
+
+    static payment() {
+      return new Uri(`/card/payment`);
+    }
+
+    static home = new Uri('/product');
+  };
 }
 
 export default Paths;
