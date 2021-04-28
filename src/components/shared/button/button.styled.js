@@ -1,3 +1,4 @@
+import convert from 'color-convert';
 import styled from 'styled-components';
 
 import { buttonColors, buttonSizes, buttonVariants } from '@/constants/button-config';
@@ -13,8 +14,11 @@ export const Button = styled.button`
   width: ${({ matchParent }) => (matchParent ? '100%' : null)};
   opacity: ${({ $disabled }) => ($disabled ? '32%' : 1)};
   background-color: ${({ $color, theme, variant }) => {
-    if (variant === buttonVariants.OUTLINE || variant === buttonVariants.LINK) {
+    if (variant === buttonVariants.LINK) {
       return null;
+    }
+    if (variant === buttonVariants.OUTLINE) {
+      return `rgb(${convert.hex.rgb(theme.palette.onSuccess)},0.05)`;
     }
     switch ($color) {
       case buttonColors.ON_SURFACE:
@@ -31,25 +35,25 @@ export const Button = styled.button`
     }
     switch ($color) {
       case buttonColors.ON_SURFACE:
-        return `1px solid ${theme.palette.onSurface}`;
+        return `1px solid rgb(${convert.hex.rgb(theme.palette.onSuccess)},0.2)`;
       case buttonColors.ERROR:
         return `1px solid ${theme.palette.error}`;
 
       default:
-        return `1px solid ${theme.palette.stroke}`;
+        return `1px solid ${theme.palette.onSuccess}`;
     }
   }};
   color: ${({ $color, theme, variant }) => {
     if (variant === buttonVariants.LINK || variant === buttonVariants.OUTLINE) {
       switch ($color) {
         case buttonColors.PRIMARY:
-          return theme.palette.onSurface;
+          return theme.palette.onSuccess;
 
         case buttonColors.SECONDARY:
-          return theme.palette.onSurface;
+          return theme.palette.onSuccess;
 
         default:
-          return theme.palette.onSurface;
+          return theme.palette.onSuccess;
       }
     } else {
       switch ($color) {
@@ -60,6 +64,8 @@ export const Button = styled.button`
   }};
   min-height: ${({ size }) => {
     switch (size) {
+      case buttonSizes.LARGE:
+        return '46px';
       case buttonSizes.MEDIUM:
         return '40px';
 
