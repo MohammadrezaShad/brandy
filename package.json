@@ -13,6 +13,7 @@
     "@svgr/webpack": "^5.5.0",
     "axios": "^0.21.1",
     "camelcase": "^6.2.0",
+    "color-convert": "^2.0.1",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.21",
     "next": "10.0.8",
