@@ -14,8 +14,9 @@ const Tabs = ({
   handleTabChange,
   selectedTabIndex = 0,
   spaceAround,
+  border = true,
 }) => (
-  <S.Wrapper $spaceAround={spaceAround}>
+  <S.Wrapper $spaceAround={spaceAround} $border={border}>
     {tabItems.map((tabItem, index) => (
       <S.Item
         onClick={() => handleTabChange && handleTabChange(index)}

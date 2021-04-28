@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: ${({ $spaceAround }) => ($spaceAround ? 'space-around' : 'space-between')};
   padding: ${({ theme, $spaceAround }) => ($spaceAround ? 0 : `0 ${theme.dim[2]}`)};
-  border-bottom: 1px solid ${({ theme }) => theme.palette.stroke};
+  border-bottom: ${({ theme, $border }) => ($border ? `1px solid ${theme.palette.stroke}` : null)};
 `;
 
 export const Item = styled.div`
