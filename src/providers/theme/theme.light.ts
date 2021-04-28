@@ -10,11 +10,12 @@ const palette = {
   surface: '#F7F7F7',
   onSurface: '#000000',
   error: '#EC008C',
-  onError: '#FFFFFF',
+  onError: '#E03636',
   success: '#40B247',
   onSuccess: '#667FC3',
   disabled: '#BBBAC0',
   stroke: '#EEEEEE',
+  strokeVariant: '#EBEBEB',
   overlay: 'rgba(0,0,0,.5)',
 };
 

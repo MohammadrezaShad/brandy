@@ -17,6 +17,7 @@ declare module 'styled-components' {
       onSuccess: string;
       disabled: string;
       stroke: string;
+      strokeVariant: string;
       overlay: string;
     };
     dim: {
