@@ -53,7 +53,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/require-default-props': 'off',
-    'no-unused-vars': ['error'],
+    'import/extensions': 'off',
+    'no-unused-vars': ['off'],
     semi: ['error', 'always'],
     'jsx-a11y/anchor-is-valid': [
       'error',

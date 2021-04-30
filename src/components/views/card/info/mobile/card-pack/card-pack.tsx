@@ -1,6 +1,8 @@
+import { FC } from 'react';
+
 import * as S from './card-pack.styled';
 
-const CardPack = () => {
+const CardPack: FC = () => {
   console.log('CardPack');
   return <div>CardPack</div>;
 };

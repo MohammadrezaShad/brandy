@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-const palette = {
+export const palette = {
   back: '#FFFFFF',
   onBack: '#F7F7F7',
   primary: '#999999',
@@ -19,7 +19,7 @@ const palette = {
   overlay: 'rgba(0,0,0,.5)',
 };
 
-const dim = {
+export const dim = {
   1: '8px',
   2: '16px',
   3: '24px',
@@ -30,7 +30,7 @@ const dim = {
   8: '64px',
 };
 
-const typography = {
+export const typography = {
   headline1: `font-size: 17px;
                 font-weight: bold;
                 line-height: 1.5;`,
