@@ -1,11 +1,42 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import { buttonSizes } from '@/constants/button-config';
+import Button from '@/shared/button';
+
+import PaymentGateway from './payment-gateway';
+import PaymentOverview from './payment-overview';
 import * as S from './payment-view.stled';
+import PaymentWallet from './payment-wallet';
 
-CardLayout;
+export enum GatewayValues {
+  Mellat,
+  Saman,
+  IDPay,
+  Wallet,
+}
+
 const PaymentView: FC = () => {
-  console.log('PaymentView');
-  return <div>MobilePaymentView</div>;
+  const [selectedGatewayId, setSelectedGatewayId] = useState(GatewayValues.Mellat);
+  const { t } = useTranslation();
+  return (
+    <>
+      <S.Wrap>
+        <PaymentGateway selectedGatewayId={selectedGatewayId} setSelectedGatewayId={setSelectedGatewayId} />
+      </S.Wrap>
+      <S.Wrap>
+        <PaymentWallet selectedGatewayId={selectedGatewayId} setSelectedGatewayId={setSelectedGatewayId} />
+      </S.Wrap>
+      <S.Wrap>
+        <PaymentOverview />
+      </S.Wrap>
+      <S.Button>
+        <Button matchParent size={buttonSizes.LARGE}>
+          {t('completePayment')}
+        </Button>
+      </S.Button>
+    </>
+  );
 };
 
 export default PaymentView;
