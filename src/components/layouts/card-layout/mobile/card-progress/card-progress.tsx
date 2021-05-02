@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import CardBag from '@/assets/vectors/CardBag.svg';
 import Payment from '@/assets/vectors/Payment.svg';
@@ -12,27 +13,28 @@ import * as S from './card-progress.styled';
 
 const CardProgress: FC = () => {
   const { pathname } = useRouter();
+  const { t } = useTranslation();
   return (
     <S.Wrapper>
       <S.Wrap>
         <S.Icon selected>
           <CardBag />
           <S.Text>
-            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>سبد خرید</Typography>
+            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>{t('card')}</Typography>
           </S.Text>
         </S.Icon>
-        <S.Line selected={pathname === Paths.card.info().getPath() || pathname === Paths.card.payment().getPath()} />
-        <S.Icon selected={pathname === Paths.card.info().getPath() || pathname === Paths.card.payment().getPath()}>
+        <S.Line selected={pathname === Paths.card.info.getPath() || pathname === Paths.card.payment.getPath()} />
+        <S.Icon selected={pathname === Paths.card.info.getPath() || pathname === Paths.card.payment.getPath()}>
           <Send />
           <S.Text>
-            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>اطلاعات ارسال</Typography>
+            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>{t('sendInfo')} </Typography>
           </S.Text>
         </S.Icon>
-        <S.Line selected={pathname === Paths.card.payment().getPath()} />
-        <S.Icon selected={pathname === Paths.card.payment().getPath()}>
+        <S.Line selected={pathname === Paths.card.payment.getPath()} />
+        <S.Icon selected={pathname === Paths.card.payment.getPath()}>
           <Payment />
           <S.Text>
-            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>پرداخت</Typography>
+            <Typography variant={typographyVariant.BODY_SM_MEDIUM}>{t('payment')}</Typography>
           </S.Text>
         </S.Icon>
       </S.Wrap>
