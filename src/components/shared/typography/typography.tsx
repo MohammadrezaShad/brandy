@@ -21,6 +21,7 @@ type TypographyProps = {
   component?: React.ElementType | keyof JSX.IntrinsicElements | string;
   display?: string;
   color?: string;
+  align?: string;
 };
 
 const Typography: FC<TypographyProps> = ({
@@ -34,6 +35,7 @@ const Typography: FC<TypographyProps> = ({
   gutterRight,
   gutterTop,
   gutterBottom,
+  align,
   ...restProps
 }) => (
   <>
@@ -47,6 +49,7 @@ const Typography: FC<TypographyProps> = ({
       gutterRight={gutterRight}
       gutterTop={gutterTop}
       gutterBottom={gutterBottom}
+      $align={align}
       {...restProps}
     >
       {children}
