@@ -21,3 +21,9 @@ export const ArrowRight = styled.span`
     stroke: ${({ theme }) => theme.palette.onSurface};
   }
 `;
+
+export const Text = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-bottom: ${({ theme }) => theme.dim[2]};
+`;
