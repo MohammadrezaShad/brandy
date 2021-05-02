@@ -46,4 +46,11 @@ export const typographyDisplay = {
   BLOCK: 'block',
   INLINE_Block: 'inline-block',
   FLEX: 'flex',
+  INLINE: 'inline',
+};
+
+export const typographyAlign = {
+  CENTER: 'center',
+  LEFT: 'left',
+  RIGHT: 'right',
 };
