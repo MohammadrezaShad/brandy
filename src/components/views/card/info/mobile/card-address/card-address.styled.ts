@@ -18,5 +18,4 @@ export const Content = styled.div`
 export const Icon = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-left: ${({ theme }) => theme.dim[1]};
 `;
