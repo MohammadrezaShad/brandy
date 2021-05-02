@@ -34,15 +34,11 @@ class Paths {
   };
 
   static card = class {
-    static info() {
-      return new Uri(`/card/info`);
-    }
+    static home = new Uri('/card');
 
-    static payment() {
-      return new Uri(`/card/payment`);
-    }
+    static info = new Uri('/card/info');
 
-    static home = new Uri('/product');
+    static payment = new Uri('/card/payment');
   };
 }
 
