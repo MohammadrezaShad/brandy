@@ -1,18 +1,21 @@
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Note from '@/assets/vectors/Note.svg';
 import Typography from '@/components/shared/typography';
 import { typographyColor, typographyComponent, typographyVariant } from '@/constants/typography-config';
-import { FC } from 'react';
 
 import * as S from './card-address.styled';
 
 const CardAddress: FC = () => {
-  console.log('CardAddress');
+  const { t } = useTranslation();
   return (
     <>
       <S.Head>
-        <Typography variant={typographyVariant.BODY_MD_MEDIUM}>آدرس پستی</Typography>
+        <Typography variant={typographyVariant.BODY_MD_MEDIUM}>{t('postAddress')}</Typography>
         <Typography color={typographyColor.ON_SUCCESS} variant={typographyVariant.BODY_SM_MEDIUM}>
-          <S.Icon as={Note} /> تغییر آدرس
+          <S.Icon as={Note} />
+          &nbsp;{t('changeAddress')}
         </Typography>
       </S.Head>
       <S.Content>

@@ -1,6 +1,10 @@
+import { useRouter } from 'next/router';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Button from '@/components/shared/button';
 import { buttonSizes } from '@/constants/button-config';
-import { FC } from 'react';
+import Paths from '@/utils/paths';
 
 import CardDiscounts from './card-discounts';
 import CardGuide from './card-guide';
@@ -9,7 +13,8 @@ import CardProducts from './card-products';
 import * as S from './card-view.stled';
 
 const CardView: FC = () => {
-  console.log('CardView');
+  const { t } = useTranslation();
+  const { push } = useRouter();
   return (
     <S.Wrapper>
       <S.InfoWrap>
@@ -25,8 +30,12 @@ const CardView: FC = () => {
         <CardGuide />
       </S.GuideWrap>
       <S.Button>
-        <Button matchParent size={buttonSizes.LARGE}>
-          ثبت سبد و مرحله بعد
+        <Button
+          onClick={() => push({ pathname: Paths.card.info.getPath() }, undefined, { scroll: false })}
+          matchParent
+          size={buttonSizes.LARGE}
+        >
+          {t('submitCard')}
         </Button>
       </S.Button>
     </S.Wrapper>

@@ -1,15 +1,17 @@
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Delete from '@/assets/vectors/Delete.svg';
 import Plus from '@/assets/vectors/Plus.svg';
 import Button from '@/components/shared/button';
 import Typography from '@/components/shared/typography';
 import { buttonSizes, buttonVariants } from '@/constants/button-config';
 import { typographyColor, typographyVariant } from '@/constants/typography-config';
-import { FC } from 'react';
 
 import * as S from './card-discounts.styled';
 
 const CardDiscounts: FC = () => {
-  console.log('CardDiscounts');
+  const { t } = useTranslation();
   return (
     <S.Wrapper>
       <S.Discount>
@@ -24,7 +26,7 @@ const CardDiscounts: FC = () => {
 
       <Button size={buttonSizes.LARGE} variant={buttonVariants.OUTLINE} matchParent>
         <S.Plus as={Plus} />
-        ثبت کد تخفیف
+        {t('registerDiscountCode')}
       </Button>
     </S.Wrapper>
   );
