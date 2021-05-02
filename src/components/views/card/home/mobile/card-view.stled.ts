@@ -1,3 +1,4 @@
+import convert from 'color-convert';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div``;
@@ -6,7 +7,7 @@ export const Block = styled.div``;
 
 export const Wrap = styled.div`
   padding: ${({ theme }) => `${theme.dim[3]} ${theme.dim[2]}`};
-  border-bottom: 5px solid ${({ theme }) => theme.palette.stroke};
+  border-top: 5px solid ${({ theme }) => `rgb(${convert.hex.rgb(theme.palette.strokeVariant)},0.4)`};
 `;
 
 export const InfoWrap = styled.div`
