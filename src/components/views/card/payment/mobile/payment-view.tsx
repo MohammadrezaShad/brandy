@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { buttonSizes } from '@/constants/button-config';
 import Button from '@/shared/button';
@@ -18,7 +18,7 @@ export enum GatewayValues {
 
 const PaymentView: FC = () => {
   const [selectedGatewayId, setSelectedGatewayId] = useState(GatewayValues.Mellat);
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <S.Wrap>

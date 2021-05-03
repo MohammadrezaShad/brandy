@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Delete from '@/assets/vectors/Delete.svg';
 import Minus from '@/assets/vectors/Minus.svg';
@@ -10,7 +10,7 @@ import { typographyColor, typographyDisplay, typographyVariant } from '@/constan
 import * as S from './card-products.styled';
 
 const CardProducts: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       {Array.from({ length: 2 }, (_, i) => i + 1).map((id) => (

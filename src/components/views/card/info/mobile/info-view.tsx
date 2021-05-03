@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { buttonSizes } from '@/constants/button-config';
 import { CorePackValues } from '@/constants/core-pack-values';
@@ -15,7 +15,7 @@ import * as S from './info-view.stled';
 const InfoView: FC = () => {
   const [selectedPackId, setSelectedPackId] = useState(CorePackValues.REGULAR);
   const { push } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Wrapper>
       <S.Wrap>

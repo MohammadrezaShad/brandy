@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Delivery from '@/assets/vectors/Delivery.svg';
 import Orginal from '@/assets/vectors/Orginal.svg';
@@ -10,7 +10,7 @@ import { typographyColor, typographyVariant } from '@/constants/typography-confi
 import * as S from './card-guide.styled';
 
 const CardGuide: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Wrapper>
       <Typography variant={typographyVariant.SUBTITLE_MD_NORMAL} color={typographyColor.PRIMARY} gutterBottom={2}>

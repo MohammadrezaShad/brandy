@@ -1,5 +1,4 @@
 import { GetServerSideProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { DeviceType, GetLayout } from 'src/types/main';
 
 import { DeviceTypes } from '@/constants/device-types';
@@ -19,8 +18,6 @@ const Product: ProductComponent = ({ deviceType }) => (
 export default Product;
 Product.getLayout = getLayout;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
+export const getServerSideProps: GetServerSideProps = async () => ({
+  props: {},
 });

@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Tick from '@/assets/vectors/Tick.svg';
 import Time from '@/assets/vectors/Time.svg';
@@ -13,7 +13,7 @@ import { typographyColor, typographyVariant } from '@/constants/typography-confi
 import * as S from './product-reviews.styled';
 
 const ProductReviews: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <S.Wrap>

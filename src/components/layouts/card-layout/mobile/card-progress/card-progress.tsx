@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import CardBag from '@/assets/vectors/CardBag.svg';
 import Payment from '@/assets/vectors/Payment.svg';
@@ -13,7 +13,7 @@ import * as S from './card-progress.styled';
 
 const CardProgress: FC = () => {
   const { pathname } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Wrapper>
       <S.Wrap>

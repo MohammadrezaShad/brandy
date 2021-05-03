@@ -1,6 +1,5 @@
 import { NextComponentType, NextPageContext } from 'next';
 import type { AppContext, AppProps } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
 import React, { ReactChild } from 'react';
 import { DeviceType, GetLayout, ThemeType } from 'src/types/main';
 import { ThemeProvider } from 'styled-components';
@@ -19,12 +18,12 @@ import CheckUserAgent from '@/utils/check-user-agent';
 type AppExtendedProps = {
   previousTheme: ThemeType;
   deviceType: DeviceType;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  Component: NextComponentType<NextPageContext, unknown, {}> & { getLayout: GetLayout };
+  Component: NextComponentType<NextPageContext, unknown, Record<string, unknown>> & { getLayout: GetLayout };
 } & AppProps;
 
 function App({ Component, pageProps, previousTheme, deviceType }: AppExtendedProps) {
   const [theme, setTheme] = React.useState(previousTheme);
+
   const toggleTheme = async () => {
     if (theme === ThemeTypes.LIGHT) {
       setTheme(ThemeTypes.DARK);
@@ -35,8 +34,8 @@ function App({ Component, pageProps, previousTheme, deviceType }: AppExtendedPro
     }
   };
 
-  const getTheme = (name: ThemeType) => {
-    switch (name) {
+  const getTheme = (themeName: ThemeType) => {
+    switch (themeName) {
       case ThemeTypes.DARK:
         return darkTheme;
       default:
@@ -80,6 +79,5 @@ App.getInitialProps = async ({ Component, ctx }: AppContext) => {
     deviceType,
   };
 };
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export default reduxWrap.withRedux(appWithTranslation(App));
+
+export default reduxWrap.withRedux(App);

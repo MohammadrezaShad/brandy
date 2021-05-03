@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import SendMethod from '@/assets/vectors/SendMethod.svg';
 import Typography from '@/components/shared/typography';
@@ -8,7 +8,7 @@ import { typographyColor, typographyDisplay, typographyVariant } from '@/constan
 import * as S from './card-send-method.styled';
 
 const CardSendMethod: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <Typography gutterBottom={2} display={typographyDisplay.BLOCK} variant={typographyVariant.BODY_MD_MEDIUM}>

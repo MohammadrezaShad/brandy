@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { Dispatch, FC, SetStateAction } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { CorePackValues } from '@/constants/core-pack-values';
 import { typographyAlign, typographyColor, typographyDisplay, typographyVariant } from '@/constants/typography-config';
@@ -13,7 +13,7 @@ type CardPackProps = {
 };
 
 const CardPack: FC<CardPackProps> = ({ selectedPackId, setSelectedPackId }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <Typography gutterBottom={2} display={typographyDisplay.BLOCK} variant={typographyVariant.BODY_MD_MEDIUM}>

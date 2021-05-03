@@ -1,8 +1,6 @@
-// import { useTranslation } from 'next-i18next';
 // import { useSelector } from 'react-redux';
 
 import { GetServerSideProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { DeviceType, ReactComponent } from 'src/types/main';
 
 import { DeviceTypes } from '@/constants/device-types';
@@ -22,8 +20,6 @@ Info.getLayout = getCardLayout;
 
 export default Info;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
+export const getServerSideProps: GetServerSideProps = async () => ({
+  props: {},
 });

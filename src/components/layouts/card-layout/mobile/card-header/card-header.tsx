@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/vectors/F-Right.svg';
 import Tabs from '@/components/shared/tabs';
@@ -16,7 +16,7 @@ const CardHeader: FC = () => {
     setSelectedTabIndex(tabIndex);
   };
   const { pathname, back } = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Head>
       <S.ArrowRight as={ArrowRight} onClick={() => back()} />

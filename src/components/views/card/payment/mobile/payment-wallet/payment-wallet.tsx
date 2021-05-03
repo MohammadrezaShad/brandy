@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import React, { Dispatch, FC, SetStateAction } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Wallet from '@/assets/vectors/Wallet.svg';
 import { typographyColor, typographyDisplay, typographyVariant } from '@/constants/typography-config';
@@ -15,7 +15,7 @@ type PaymentWalletProps = {
 };
 
 const PaymentWallet: FC<PaymentWalletProps> = ({ selectedGatewayId, setSelectedGatewayId }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Wrap>
       <Radio

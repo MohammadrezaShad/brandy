@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Note from '@/assets/vectors/Note.svg';
 import Typography from '@/components/shared/typography';
@@ -8,7 +8,7 @@ import { typographyColor, typographyComponent, typographyVariant } from '@/const
 import * as S from './card-address.styled';
 
 const CardAddress: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <S.Head>

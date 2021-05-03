@@ -1,5 +1,10 @@
 import React from 'react';
 
-const ThemeContext = React.createContext('');
+type ThemeProps = {
+  theme?: string;
+  toggleTheme?: () => Promise<void>;
+};
+
+const ThemeContext = React.createContext<ThemeProps>({});
 
 export default ThemeContext;

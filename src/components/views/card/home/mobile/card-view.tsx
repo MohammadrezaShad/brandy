@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/shared/button';
 import { buttonSizes } from '@/constants/button-config';
@@ -13,7 +13,7 @@ import CardProducts from './card-products';
 import * as S from './card-view.stled';
 
 const CardView: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const { push } = useRouter();
   return (
     <S.Wrapper>

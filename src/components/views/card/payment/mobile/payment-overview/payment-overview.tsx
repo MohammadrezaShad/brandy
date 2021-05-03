@@ -1,4 +1,5 @@
-import { Trans, useTranslation } from 'react-i18next';
+import Trans from 'next-translate/Trans';
+import useTranslation from 'next-translate/useTranslation';
 
 import { typographyColor, typographyDisplay } from '@/constants/typography-config';
 import Typography from '@/shared/typography';
@@ -6,7 +7,7 @@ import Typography from '@/shared/typography';
 import * as S from './payment-overview.styled';
 
 const PaymentOverview = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <>
       <S.Content>
@@ -39,7 +40,7 @@ const PaymentOverview = () => {
       <S.Terms>
         <Typography color={typographyColor.PRIMARY}>
           <Trans
-            i18nKey="cardPaymentTerms"
+            i18nKey="common:cardPaymentTerms"
             components={{
               p: <Typography color={typographyColor.ON_SURFACE} display={typographyDisplay.INLINE} />,
               t: <Typography color={typographyColor.ON_SUCCESS} display={typographyDisplay.INLINE} />,

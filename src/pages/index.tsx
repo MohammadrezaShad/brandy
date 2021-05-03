@@ -1,12 +1,11 @@
-// import { useTranslation } from 'next-i18next';
-// import { useSelector } from 'react-redux';
-import { GetServerSideProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import useTranslation from 'next-translate/useTranslation';
 import React from 'react';
 import { DeviceType, GetLayout } from 'src/types/main';
 
 import { DeviceTypes } from '@/constants/device-types';
 import { getLayout } from '@/layouts/main-layout/main-layout';
+import { reduxWrap, useTypedSelector } from '@/redux/store';
+import { increment } from '@/slices/test-slice';
 import Client from '@/views/home/client';
 import Mobile from '@/views/home/mobile';
 
@@ -15,16 +14,20 @@ type HomeProps = {
 };
 type HomeComponent = React.FC<HomeProps> & { getLayout: GetLayout };
 
-const Home: HomeComponent = ({ deviceType }) => (
-  // const { name } = useSelector((state) => state.test);
-  <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>
-);
+const Home: HomeComponent = ({ deviceType }) => {
+  const st = useTypedSelector((state) => state.test);
+  const { t } = useTranslation('common');
+  console.log(st);
+  return <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>;
+};
 Home.getLayout = getLayout;
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
+export const getServerSideProps = reduxWrap.getServerSideProps(async ({ store }) => {
+  const { dispatch } = store;
+  console.log(dispatch(increment()));
+  return {
+    props: {},
+  };
 });

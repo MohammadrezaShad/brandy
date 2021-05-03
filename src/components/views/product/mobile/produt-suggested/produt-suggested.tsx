@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import ProductItem from '@/components/shared/product-item';
 import Tabs from '@/components/shared/tabs';
@@ -8,7 +8,7 @@ import * as S from './produt-suggested.styled';
 
 const ProdutSuggested = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(0);
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   const handleTabChange = (tabIndex: number): void => {
     setSelectedTabIndex(tabIndex);

@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Delete from '@/assets/vectors/Delete.svg';
 import Plus from '@/assets/vectors/Plus.svg';
@@ -11,7 +11,7 @@ import { typographyColor, typographyVariant } from '@/constants/typography-confi
 import * as S from './card-discounts.styled';
 
 const CardDiscounts: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <S.Wrapper>
       <S.Discount>
