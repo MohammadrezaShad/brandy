@@ -37,6 +37,7 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', '@typescript-eslint', 'eslint-plugin-prettier', 'simple-import-sort'],
   rules: {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     'react/jsx-props-no-spreading': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
