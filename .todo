@@ -8,7 +8,7 @@ Project:
     - Constants:is a type of variable whose value cannot be changed and has global usage
     - Helpers:custom hooks or do bigger things.
     - Utils:small function , that can be freely moved and imported anywhere,don't typically depend on any framework code.
-    - Service:part of reudx Structure do actions methods in that.
+    - Service:class/interface provides a way of a client to interact with some functionality in the application.
     - Hooks:make custom hooks.
    Naming Convention:
     - Use Intention-Revealing
