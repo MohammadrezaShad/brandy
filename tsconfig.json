@@ -34,10 +34,9 @@
       "@/providers/*": ["src/providers/*"],
       "@/hoc/*": ["src/hoc/*"],
       "@/pages/*": ["src/pages/*"],
-      "@/actions/*": ["src/redux/actions/*"],
-      "@/reducers/*": ["src/redux/reducers/*"],
-      "@/types/*": ["src/redux/types/*"],
+      "@/slices/*": ["src/redux/slices/*"],
       "@/redux/*": ["src/redux/*"],
+      "@/types/*": ["src/types/*"],
       "@/services/*": ["src/services/*"]
     },
     "strict": true,
