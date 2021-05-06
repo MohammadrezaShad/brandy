@@ -1,8 +1,8 @@
 import { FC, ReactChild, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { disableBodyScroll, enableBodyScroll } from '@/utils/body-scroll';
 import { canUseDOM } from '@/utils/can-use-dom';
+import { disableBodyScroll, enableBodyScroll } from '@/utils/toggle-body-scroll';
 
 import * as S from './dialog.styled';
 
