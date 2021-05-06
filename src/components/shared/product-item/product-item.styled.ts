@@ -21,13 +21,16 @@ export const Image = styled.img`
 export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: ${({ theme }) => theme.dim[1]};
+  margin-bottom: ${({ theme }) => theme.dim[1]};
 `;
 
 export const Colors = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: ${({ theme }) => theme.dim[1]};
+  flex: 1;
+  margin-right: ${({ theme }) => theme.dim[1]};
 `;
 
 export const Icon = styled.span`
