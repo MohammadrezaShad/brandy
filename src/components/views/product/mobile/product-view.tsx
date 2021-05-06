@@ -1,6 +1,6 @@
 import _ from 'lodash';
+import useTranslation from 'next-translate/useTranslation';
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Toman from '@/assets/vectors/Toman.svg';
 import Button from '@/components/shared/button';
@@ -8,6 +8,7 @@ import Typography from '@/components/shared/typography';
 import { buttonSizes } from '@/constants/button-config';
 import { ProductAnchors } from '@/constants/product-anchors';
 import { typographyVariant } from '@/constants/typography-config';
+import Breadcrumbs from '@/shared/breadcrumbs';
 import isElementInViewPort from '@/utils/is-element-in-viewport';
 import ProductCarousel from '@/views/product/mobile/product-carousel';
 
@@ -53,6 +54,7 @@ const ProductView: FC = () => {
 
   return (
     <S.Wrapper>
+      <Breadcrumbs crumbs={['دسته‌بندی', 'دسته اول', 'دسته دوم', 'محصول ایکس']} />
       <ProductHead currentProductAnchor={currentProductAnchor} setCurrentProductAnchor={setCurrentProductAnchor} />
       <S.CarouselWrap ref={carouselRef}>
         <S.AnchorPlaceholder id={ProductAnchors.PRODUCT_CAROUSEL} />
