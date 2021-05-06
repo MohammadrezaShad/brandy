@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import ArrowLeft from '@/assets/vectors/F-Left.svg';
 import Select from '@/components/shared/form/select';
