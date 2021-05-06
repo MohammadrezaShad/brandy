@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 import { Dispatch, FC, SetStateAction, useCallback, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import CardIcon from '@/assets/vectors/Bag.svg';
 import ArrowRight from '@/assets/vectors/F-Right.svg';
@@ -18,19 +18,17 @@ type ProductHeadProps = {
 };
 
 const ProductHead: FC<ProductHeadProps> = ({ currentProductAnchor, setCurrentProductAnchor }) => {
+  const [isProductHeadShow, setIsProductHeadShow] = useState<boolean>(true);
   const { query } = useRouter();
-  const [isProductHeadShow, setIsProductHeadShow] = useState<boolean>(false);
-  const { t } = useTranslation('common');
   const { scrollY } = useScroll();
   const { back } = useRouter();
+  const { t } = useTranslation('common');
 
   const handleShowProductHead = useCallback(() => {
-    if (scrollY > 150) {
-      // eslint-disable-next-line no-unused-expressions
-      !isProductHeadShow && setIsProductHeadShow(true);
-    } else {
-      // eslint-disable-next-line no-unused-expressions
-      isProductHeadShow && setIsProductHeadShow(false);
+    if (scrollY > 150 && !isProductHeadShow) {
+      setIsProductHeadShow(true);
+    } else if (isProductHeadShow && scrollY <= 150) {
+      setIsProductHeadShow(false);
     }
   }, [isProductHeadShow, scrollY]);
 
