@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { DeviceType, GetLayout } from 'src/types/main';
+import { DeviceType, ReactComponent } from 'src/types/main';
 
 import { DeviceTypes } from '@/constants/device-types';
 import { getLayout } from '@/layouts/main-layout/main-layout';
@@ -9,9 +9,8 @@ import Mobile from '@/views/product/mobile';
 type ProductProps = {
   deviceType: DeviceType;
 };
-type ProductComponent = React.FC<ProductProps> & { getLayout: GetLayout };
 
-const Product: ProductComponent = ({ deviceType }) => (
+const Product: ReactComponent<ProductProps> = ({ deviceType }) => (
   <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>
 );
 
