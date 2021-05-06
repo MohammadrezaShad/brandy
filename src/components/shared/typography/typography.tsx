@@ -22,6 +22,7 @@ type TypographyProps = {
   display?: string;
   color?: string;
   align?: string;
+  nowWrap?: boolean;
 };
 
 const Typography: FC<TypographyProps> = ({
@@ -36,6 +37,7 @@ const Typography: FC<TypographyProps> = ({
   gutterTop,
   gutterBottom,
   align,
+  nowWrap,
   ...restProps
 }) => (
   <>
@@ -50,6 +52,7 @@ const Typography: FC<TypographyProps> = ({
       gutterTop={gutterTop}
       gutterBottom={gutterBottom}
       $align={align}
+      $nowWrap={nowWrap}
       {...restProps}
     >
       {children}

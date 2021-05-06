@@ -11,6 +11,7 @@ type TextProps = {
   component: string;
   $align: string;
   color: string;
+  $nowWrap: boolean;
 };
 export const Text = styled.span<TextProps>`
   display: ${({ display }) => display};
@@ -23,4 +24,5 @@ export const Text = styled.span<TextProps>`
   margin-top: ${({ theme, gutterTop }) => (gutterTop ? theme.dim[gutterTop] : null)};
   margin-bottom: ${({ theme, gutterBottom }) => (gutterBottom ? theme.dim[gutterBottom] : null)};
   transition: 0.5s all;
+  white-space: ${({ $nowWrap }) => ($nowWrap ? 'nowrap' : null)};
 `;
