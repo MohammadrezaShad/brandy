@@ -1,5 +1,5 @@
+import useTranslation from 'next-translate/useTranslation';
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Tabs from '@/components/shared/tabs';
 import Typography from '@/components/shared/typography';
