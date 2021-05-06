@@ -12,3 +12,5 @@ export type LayoutProps = {
   children: unknown;
   deviceType: DeviceType;
 };
+
+export type ValueOf<T> = T[keyof T];
