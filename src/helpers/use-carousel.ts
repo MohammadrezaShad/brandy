@@ -2,10 +2,13 @@
 import { useState } from 'react';
 import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
 
-const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex = 0, carouselLimit = 1) => {
+const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex = 0) => {
+  const MOVE_PER_SLIDE = 1;
   const [activeCarouselItemIndex, setActiveCarouselItemIndex] = useState<number>(intialActiveCarouselItemIndex);
   const [hasCraouselAnimate, setHasCraouselAnimate] = useState<boolean>(true);
-  const [current, setCurrent] = useState<number>(intialActiveCarouselItemIndex);
+  const [finalActiveCarouselItemIndex, setFinalActiveCarouselItemIndex] = useState<number>(
+    intialActiveCarouselItemIndex,
+  );
 
   const handleSwip: SwipeableHandlers = useSwipeable({
     onSwipedLeft: () => handleSlideRight(),
@@ -15,48 +18,53 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
   });
 
   const handleSlideRight = (): void => {
-    handleSlideGoto(current - carouselLimit);
+    handleSlideGoto(finalActiveCarouselItemIndex - MOVE_PER_SLIDE);
   };
   const handleSlideLeft = (): void => {
-    handleSlideGoto(current + carouselLimit);
+    handleSlideGoto(finalActiveCarouselItemIndex + MOVE_PER_SLIDE);
   };
   const handleSlideJump = (caruselIndex: number): void => {
     handleSlideGoto(caruselIndex);
   };
 
-  const handleSlideGoto = (index: number, propared?: boolean): void => {
-    if (carouselItemLength <= 1) return;
-    if (!propared) {
-      if (index === 1 && current === 0 && activeCarouselItemIndex === carouselItemLength) {
-        setHasCraouselAnimate(false);
-        setActiveCarouselItemIndex(0);
-        setTimeout(() => {
-          setHasCraouselAnimate(true);
-          handleSlideGoto(index, true);
-        }, 60);
-        return;
-      }
-      if (index < 0 && current === 0 && activeCarouselItemIndex !== carouselItemLength) {
-        setHasCraouselAnimate(false);
-        setActiveCarouselItemIndex(carouselItemLength);
-        setTimeout(() => {
-          setHasCraouselAnimate(true);
-          handleSlideGoto(index, true);
-        }, 50);
-        return;
-      }
+  const handleSlideGoto = (targetIndex: number): void => {
+    console.log(targetIndex);
+    if (!isSlideAllowed()) return;
+
+    if (isExceptionSlide(targetIndex)) {
+      handleExceptionSlide(targetIndex);
+      return;
     }
 
-    if (index > carouselItemLength - carouselLimit) {
-      index = 0;
+    handleCarouselSlide(targetIndex);
+  };
+
+  const isSlideAllowed = () => carouselItemLength > 1;
+
+  const isExceptionSlide = (targetIndex: number) =>
+    (targetIndex === 1 && finalActiveCarouselItemIndex === 0 && activeCarouselItemIndex === carouselItemLength) ||
+    (targetIndex < 0 && finalActiveCarouselItemIndex === 0 && activeCarouselItemIndex !== carouselItemLength);
+
+  const handleExceptionSlide = (targetIndex: number) => {
+    setHasCraouselAnimate(false);
+    setActiveCarouselItemIndex(targetIndex < 0 ? carouselItemLength : 0);
+    setTimeout(() => {
+      setHasCraouselAnimate(true);
+      handleCarouselSlide(targetIndex);
+    }, 60);
+  };
+
+  const handleCarouselSlide = (targetIndex: number) => {
+    if (targetIndex > carouselItemLength - 1) {
+      targetIndex = 0;
       setActiveCarouselItemIndex(carouselItemLength);
-    } else if (index < 0) {
-      index = carouselItemLength - carouselLimit;
-      setActiveCarouselItemIndex(index);
+    } else if (targetIndex < 0) {
+      targetIndex = carouselItemLength - 1;
+      setActiveCarouselItemIndex(targetIndex);
     } else {
-      setActiveCarouselItemIndex(index);
+      setActiveCarouselItemIndex(targetIndex);
     }
-    setCurrent(index);
+    setFinalActiveCarouselItemIndex(targetIndex);
   };
 
   return {
@@ -66,7 +74,7 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
     handleSlideJump,
     activeCarouselItemIndex,
     hasCraouselAnimate,
-    current,
+    current: finalActiveCarouselItemIndex,
   };
 };
 
