@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 
 import CookiesName from '@/constants/cookies-name';
 import { ThemeTypes } from '@/constants/theme-types';
+import DeviceTypeContext from '@/context/device-type-context';
 import ThemeContext from '@/context/theme-context';
 import { getCookie, setCookie } from '@/helpers/cookie';
 import MainLayout from '@/layouts/main-layout/main-layout';
@@ -49,9 +50,12 @@ function App({ Component, pageProps, previousTheme, deviceType }: AppExtendedPro
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={getTheme(theme)}>
         <GlobalStyle />
+
         {getLayout(
           <>
-            <Component deviceType={deviceType} {...pageProps} />
+            <DeviceTypeContext.Provider value={{ deviceType }}>
+              <Component deviceType={deviceType} {...pageProps} />
+            </DeviceTypeContext.Provider>
           </>,
           deviceType,
         )}
