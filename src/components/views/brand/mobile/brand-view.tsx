@@ -1,35 +1,32 @@
-import { useState } from 'react';
-
-import { AppearanceModes } from '@/constants/appearance-modes';
 import Appearance from '@/dialogs/product/appearance';
+import { useAppearance } from '@/helpers/use-appearance';
+import ProductHead from '@/shared/product/product-head';
+import ProductList from '@/shared/product/product-list';
 
 import BrandBanner from './brand-banner';
 import BrandCategory from './brand-category';
-import BrandHead from './brand-head';
-import BrandProduct from './brand-product';
 import * as S from './brand-view.styled';
 
 const BrandView = () => {
-  const [isAppearanceModalShow, setIsAppearanceModalShow] = useState(false);
-  const [appearanceMode, setAppearanceMode] = useState(AppearanceModes.VIEW_TWO);
+  const {
+    isAppearanceModalShow,
+    appearanceMode,
+    setAppearanceMode,
+    handleCloseAppearanceModal,
+    handleOpenAppearanceModal,
+  } = useAppearance();
 
-  const handleCloseAppearanceModal = () => {
-    setIsAppearanceModalShow(false);
-  };
-  const handleOpenAppearanceModal = () => {
-    setIsAppearanceModalShow(true);
-  };
   return (
     <>
       <BrandBanner />
-      <S.HeadWrap onClick={handleOpenAppearanceModal}>
-        <BrandHead appearanceMode={appearanceMode} />
+      <S.HeadWrap>
+        <ProductHead handleOpenAppearanceModal={handleOpenAppearanceModal} appearanceMode={appearanceMode} />
       </S.HeadWrap>
       <S.Wrap>
         <BrandCategory />
       </S.Wrap>
       <S.ProductWrap>
-        <BrandProduct />
+        <ProductList />
       </S.ProductWrap>
       <Appearance
         open={isAppearanceModalShow}
