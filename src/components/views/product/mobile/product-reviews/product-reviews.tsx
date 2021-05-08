@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 
 import Tick from '@/assets/vectors/Tick.svg';
 import Time from '@/assets/vectors/Time.svg';
@@ -9,11 +9,14 @@ import StarRating from '@/components/shared/star-rating/star-rating';
 import Typography from '@/components/shared/typography';
 import { buttonColors, buttonSizes } from '@/constants/button-config';
 import { typographyColor, typographyVariant } from '@/constants/typography-config';
+import DeviceTypeContext from '@/context/device-type-context';
 
 import * as S from './product-reviews.styled';
 
 const ProductReviews: FC = () => {
   const { t } = useTranslation('common');
+  const { deviceType } = useContext(DeviceTypeContext);
+
   return (
     <>
       <S.Wrap>
@@ -49,7 +52,7 @@ const ProductReviews: FC = () => {
         </S.Rate>
       </S.Wrap>
       <S.Comments>
-        <ScrollCarousel>
+        <ScrollCarousel deviceType={deviceType}>
           {Array.from({ length: 5 }, (_, i) => i + 1).map((id) => (
             <S.Comment key={id}>
               <S.CommentHead>
