@@ -9,10 +9,10 @@ type ScrollCarouselProp = {
 };
 
 const ScrollCarousel: FC<ScrollCarouselProp> = ({ children }) => {
-  const [isTouchDevice, setisTouchDevice] = useState<boolean>(false);
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   const carouselSlides = Children.toArray(children);
   useEffect(() => {
-    setisTouchDevice(isTouchDeviceMethod);
+    setIsTouchDevice(isTouchDeviceMethod);
   }, []);
   return <S.Wrap isTouchDevice={isTouchDevice}>{carouselSlides.map((carouselSlide) => carouselSlide)}</S.Wrap>;
 };
