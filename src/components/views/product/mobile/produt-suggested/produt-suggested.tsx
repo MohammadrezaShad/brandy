@@ -1,8 +1,8 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useState } from 'react';
 
-import ProductItem from '@/components/shared/product-item';
 import Tabs from '@/components/shared/tabs';
+import ProductItem from '@/shared/product/product-item';
 
 import * as S from './produt-suggested.styled';
 
