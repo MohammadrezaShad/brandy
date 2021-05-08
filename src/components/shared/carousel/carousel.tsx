@@ -14,7 +14,7 @@ type CarouselProps = {
 const Carousel: FC<CarouselProps> = ({ children }) => {
   const carouselSlides = React.Children.toArray(children);
   const {
-    handleSwip,
+    handleSwipe,
     handleSlideRight,
     handleSlideLeft,
     handleSlideJump,
@@ -25,7 +25,7 @@ const Carousel: FC<CarouselProps> = ({ children }) => {
   return (
     <S.Wrapper>
       <S.Arrow as={ArrowRight} onClick={handleSlideRight} />
-      <S.Content {...handleSwip}>
+      <S.Content {...handleSwipe}>
         <S.Wrap activeCarouselItemIndex={activeCarouselItemIndex} hasCraouselAnimate={hasCraouselAnimate}>
           {carouselSlides.map((carouselSlide, index) => (
             <S.CarouselItem key={index}>{carouselSlide}</S.CarouselItem>

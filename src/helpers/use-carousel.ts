@@ -10,7 +10,7 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
     intialActiveCarouselItemIndex,
   );
 
-  const handleSwip: SwipeableHandlers = useSwipeable({
+  const handleSwipe: SwipeableHandlers = useSwipeable({
     onSwipedLeft: () => handleSlideRight(),
     onSwipedRight: () => handleSlideLeft(),
     preventDefaultTouchmoveEvent: true,
@@ -28,7 +28,6 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
   };
 
   const handleSlideGoto = (targetIndex: number): void => {
-    console.log(targetIndex);
     if (!isSlideAllowed()) return;
 
     if (isExceptionSlide(targetIndex)) {
@@ -68,7 +67,7 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
   };
 
   return {
-    handleSwip,
+    handleSwipe,
     handleSlideRight,
     handleSlideLeft,
     handleSlideJump,
