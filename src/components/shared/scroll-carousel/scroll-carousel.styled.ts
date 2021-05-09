@@ -25,6 +25,11 @@ export const Wrap = styled.div<{ isTouchDevice: boolean }>`
           }
         `
       : css`
+          overflow: -moz-scrollbars-none;
           scrollbar-width: none;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
         `}
 `;
