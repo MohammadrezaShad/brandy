@@ -34,10 +34,20 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'eslint-config-prettier', // Make sure this is always the last element in the array.
   ],
-  plugins: ['react', 'jsx-a11y', '@typescript-eslint', 'eslint-plugin-prettier', 'simple-import-sort'],
+  plugins: [
+    'react',
+    'jsx-a11y',
+    '@typescript-eslint',
+    'eslint-plugin-prettier',
+    'simple-import-sort',
+  ],
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
+    'prettier/prettier': ['error', {}, {usePrettierrc: true}],
+    'no-param-reassign': [
+      'error',
+      {props: true, ignorePropertyModificationsFor: ['state']},
+    ],
+    'no-unused-expressions': 'off',
     'react/jsx-props-no-spreading': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
@@ -47,7 +57,10 @@ module.exports = {
     'import/no-unresolved': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     'react/prop-types': 0,
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
+    ],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'simple-import-sort/imports': 'error',
