@@ -1,25 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 
-export const Wrap = styled.div<{ isTouchDevice: boolean }>`
+export const Wrap = styled.div<{isTouchDevice: boolean}>`
   display: flex;
   overflow: auto;
   scroll-behavior: smooth;
-  ${({ isTouchDevice }) =>
+  ${({isTouchDevice}) =>
     !isTouchDevice
       ? css`
           scrollbar-color: #d6dee1 transparent;
           scrollbar-width: thin;
 
           /* Works on Chrome, Edge, and Safari */
-          &::-webkit-scrollbar {
-            width: 12px;
+          ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
           }
 
-          &::-webkit-scrollbar-track {
+          ::-webkit-scrollbar-track {
             background-color: transparent;
           }
 
-          &::-webkit-scrollbar-thumb {
+          ::-webkit-scrollbar-thumb {
             background-color: #d6dee1;
             border-radius: 20px;
           }
@@ -28,6 +29,7 @@ export const Wrap = styled.div<{ isTouchDevice: boolean }>`
           overflow: -moz-scrollbars-none;
           scrollbar-width: none;
           -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
           &::-webkit-scrollbar {
             display: none;
           }
