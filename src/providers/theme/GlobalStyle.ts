@@ -6,9 +6,6 @@ export default createGlobalStyle`
       margin: 0;
       list-style-type:none;
       outline:none;
-      &::-webkit-scrollbar{width:6px;height:6px}
-      &::-webkit-scrollbar-thumb{border-radius:16px;}
-      &::-webkit-scrollbar-track{background-color:transparent}
       box-sizing:border-box;
    }
 
@@ -22,10 +19,6 @@ export default createGlobalStyle`
       height: 100%;
       font-family: "Dana";
       background-color: #fff;
-      &::-webkit-scrollbar{width:10px;height:10px}
-      &::-webkit-scrollbar-thumb{background-color:#666}
-      &::-webkit-scrollbar-track{background-color:#e0e0e0}
-      &:hover::-webkit-scrollbar-thumb{background-color:#555}
       overflow-x:hidden;
    }
 

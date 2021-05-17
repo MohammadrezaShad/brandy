@@ -42,9 +42,9 @@ const ProductReviews: FC = () => {
           </S.TextWrap>
         </S.Content>
         <S.Rate>
-          <S.RateText>4.5</S.RateText>
+          <S.RateText>4.7</S.RateText>
           <S.RateStar>
-            <StarRating rate={4.5} />
+            <StarRating rate={4.7} />
           </S.RateStar>
           <Button size={buttonSizes.S_MEDIUM} color={buttonColors.ERROR}>
             {t('submitReview')}
@@ -57,7 +57,7 @@ const ProductReviews: FC = () => {
             <S.Comment key={id}>
               <S.CommentHead>
                 <Typography variant={typographyVariant.BODY_MD_MEDIUM}>RE***@Gmail.com</Typography>
-                <StarRating rate={4.5} />
+                <StarRating rate={4.7} />
               </S.CommentHead>
               <S.CommentBody>
                 <Typography color={typographyColor.ON_PRIMARY} variant={typographyVariant.SUBTITLE_MD_NORMAL}>

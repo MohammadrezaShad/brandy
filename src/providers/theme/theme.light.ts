@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import {DefaultTheme} from 'styled-components';
 
 export const palette = {
   back: '#FFFFFF',
@@ -67,7 +67,8 @@ const defaults = {
   borderRadius: '8px',
   borderRadiusVariant: '4px',
 };
-const mediaQueries = (breakPoint: string): string => `@media only screen and (max-width: ${breakPoint})`;
+const mediaQueries = (breakPoint: string): string =>
+  `@media only screen and (max-width: ${breakPoint})`;
 
 const breakPoints = {
   mobileSm: mediaQueries('425px'),
