@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import useTranslation from 'next-translate/useTranslation';
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import {FC, useCallback, useEffect, useRef, useState} from 'react';
 
 import Toman from '@/assets/vectors/Toman.svg';
 import Button from '@/components/shared/button';
 import Typography from '@/components/shared/typography';
-import { buttonSizes } from '@/constants/button-config';
-import { ProductAnchors } from '@/constants/product-anchors';
-import { typographyVariant } from '@/constants/typography-config';
+import {buttonSizes} from '@/constants/button-config';
+import {ProductAnchors} from '@/constants/product-anchors';
+import {typographyVariant} from '@/constants/typography-config';
 import Breadcrumbs from '@/shared/breadcrumbs';
 import isElementInViewPort from '@/utils/is-element-in-viewport';
 import ProductCarousel from '@/views/product/mobile/product-carousel';
@@ -19,26 +19,31 @@ import * as S from './product-view.styled';
 import ProdutSuggested from './produt-suggested/produt-suggested';
 
 const ProductView: FC = () => {
-  const [currentProductAnchor, setCurrentProductAnchor] = useState<string>(ProductAnchors.PRODUCT_CAROUSEL);
+  const [currentProductAnchor, setCurrentProductAnchor] = useState<string>(
+    ProductAnchors.PRODUCT_CAROUSEL,
+  );
   const carouselRef = useRef();
   const reviewsRef = useRef();
   const collectionRef = useRef();
-  const { t } = useTranslation('common');
+  const {t} = useTranslation('common');
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = useCallback(
     _.debounce(() => {
-      if (isElementInViewPort(carouselRef.current) && currentProductAnchor !== ProductAnchors.PRODUCT_CAROUSEL) {
+      if (
+        isElementInViewPort(carouselRef.current) &&
+        currentProductAnchor !== ProductAnchors.PRODUCT_CAROUSEL
+      ) {
         setCurrentProductAnchor(ProductAnchors.PRODUCT_CAROUSEL);
       } else if (
         isElementInViewPort(reviewsRef.current) &&
-        !isElementInViewPort(collectionRef.current) &&
         currentProductAnchor !== ProductAnchors.REVIEWS
       ) {
         setCurrentProductAnchor(ProductAnchors.REVIEWS);
       } else if (
         isElementInViewPort(collectionRef.current) &&
         !isElementInViewPort(reviewsRef.current) &&
+        currentProductAnchor !== ProductAnchors.NEW_COLLECTION &&
         currentProductAnchor !== ProductAnchors.COLLECTION
       ) {
         setCurrentProductAnchor(ProductAnchors.COLLECTION);
@@ -54,8 +59,13 @@ const ProductView: FC = () => {
 
   return (
     <S.Wrapper>
-      <Breadcrumbs crumbs={['دسته‌بندی', 'دسته اول', 'دسته دوم', 'محصول ایکس']} />
-      <ProductHead currentProductAnchor={currentProductAnchor} setCurrentProductAnchor={setCurrentProductAnchor} />
+      <Breadcrumbs
+        crumbs={['دسته‌بندی', 'دسته اول', 'دسته دوم', 'محصول ایکس']}
+      />
+      <ProductHead
+        currentProductAnchor={currentProductAnchor}
+        setCurrentProductAnchor={setCurrentProductAnchor}
+      />
       <S.CarouselWrap ref={carouselRef}>
         <S.AnchorPlaceholder id={ProductAnchors.PRODUCT_CAROUSEL} />
         <ProductCarousel />
@@ -68,8 +78,11 @@ const ProductView: FC = () => {
         <ProductReviews />
       </S.Review>
       <S.Separator />
-      <S.Collection ref={collectionRef}>
-        <S.AnchorPlaceholder id={ProductAnchors.COLLECTION} ref={reviewsRef} />
+      <S.Collection>
+        <S.AnchorPlaceholder
+          id={ProductAnchors.COLLECTION}
+          ref={collectionRef}
+        />
         <ProdutSuggested />
       </S.Collection>
       <S.ButtonWrap>
