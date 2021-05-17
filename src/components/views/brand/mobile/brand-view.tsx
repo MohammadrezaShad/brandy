@@ -1,5 +1,4 @@
-import Appearance from '@/dialogs/product/appearance';
-import { useAppearance } from '@/helpers/use-appearance';
+import {UseFilters} from '@/helpers/use-filters';
 import ProductHead from '@/shared/product/product-head';
 import ProductList from '@/shared/product/product-list';
 
@@ -9,18 +8,53 @@ import * as S from './brand-view.styled';
 
 const BrandView = () => {
   const {
-    isAppearanceModalShow,
-    appearanceMode,
-    setAppearanceMode,
-    handleCloseAppearanceModal,
-    handleOpenAppearanceModal,
-  } = useAppearance();
+    sizingFilters,
+    templateFilters,
+    coloringFilters,
+    minPrice,
+    maxPrice,
+    resetFilter,
+    handleChangeSizingFilter,
+    handleChangeTemplateFilter,
+    handleChangeColoringFilter,
+    renderActiveFiltersStatus,
+    removeActiveColoringFilter,
+    removeActiveSizingFilter,
+    removeActiveTemplateFilter,
+    getActiveFilters,
+    changeMinPriceAction,
+    changeMaxPriceAction,
+    removeAllfilters,
+  } = UseFilters(2000, 50000);
+
+  const submitFilters = () => {
+    console.log('submitFilter');
+  };
 
   return (
     <>
       <BrandBanner />
       <S.HeadWrap>
-        <ProductHead handleOpenAppearanceModal={handleOpenAppearanceModal} appearanceMode={appearanceMode} />
+        <ProductHead
+          sizingFilters={sizingFilters}
+          templateFilters={templateFilters}
+          coloringFilters={coloringFilters}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          resetFilter={resetFilter}
+          handleChangeSizingFilter={handleChangeSizingFilter}
+          handleChangeTemplateFilter={handleChangeTemplateFilter}
+          handleChangeColoringFilter={handleChangeColoringFilter}
+          renderActiveFiltersStatus={renderActiveFiltersStatus}
+          removeActiveColoringFilter={removeActiveColoringFilter}
+          removeActiveSizingFilter={removeActiveSizingFilter}
+          removeActiveTemplateFilter={removeActiveTemplateFilter}
+          getActiveFilters={getActiveFilters}
+          changeMinPriceAction={changeMinPriceAction}
+          changeMaxPriceAction={changeMaxPriceAction}
+          removeAllfilters={removeAllfilters}
+          submitFilters={submitFilters}
+        />
       </S.HeadWrap>
       <S.Wrap>
         <BrandCategory />
@@ -28,12 +62,6 @@ const BrandView = () => {
       <S.ProductWrap>
         <ProductList />
       </S.ProductWrap>
-      <Appearance
-        open={isAppearanceModalShow}
-        onClose={handleCloseAppearanceModal}
-        appearanceMode={appearanceMode}
-        setAppearanceMode={setAppearanceMode}
-      />
     </>
   );
 };
