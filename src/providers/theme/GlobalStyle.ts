@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
 export default createGlobalStyle`
    *{
@@ -17,13 +17,13 @@ export default createGlobalStyle`
 
    body{
       height: 100%;
-      font-family: "Dana";
+      font-family: "Dana", Arial, Verdana, Tahoma, sans-serif;
       background-color: #fff;
       overflow-x:hidden;
    }
 
    input{
-      font-family: "Dana";
+      font-family: "Dana", Arial, Verdana, Tahoma, sans-serif;
       font-weight:bold;
    }
 
@@ -33,7 +33,7 @@ export default createGlobalStyle`
       border:none;
       background:none;
       appearance: none;
-      font-family: "Dana";
+      font-family: "Dana", Arial, Verdana, Tahoma, sans-serif;
    }
       #__next{height: 100%;}
 

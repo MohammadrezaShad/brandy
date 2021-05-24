@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 
 type MainLayoutProps = {
   children: unknown;
 };
-const MainLayout: FC<MainLayoutProps> = ({ children }) => (
+const MainLayout: FC<MainLayoutProps> = ({children}) => (
   <div>
     Desktop
     {children}

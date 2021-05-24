@@ -1,4 +1,4 @@
-import { FC, FormEvent } from 'react';
+import {FC, FormEvent} from 'react';
 
 import * as S from './radio.styled';
 
@@ -9,12 +9,17 @@ type RadioProps = {
   name?: string;
 };
 
-const Radio: FC<RadioProps> = ({ children, onChange, name, checked }) => {
+const Radio: FC<RadioProps> = ({children, onChange, name, checked}) => {
   console.log('Radio');
   return (
     <S.Wrap>
       <S.Layout checked={checked}>
-        <S.Input type="radio" checked={checked} name={name} onChange={onChange} />
+        <S.Input
+          type='radio'
+          checked={checked}
+          name={name}
+          onChange={onChange}
+        />
       </S.Layout>
       {children}
     </S.Wrap>

@@ -1,1 +1,1 @@
-export { default } from './product-filters-section';
+export {default} from './product-filters-section';

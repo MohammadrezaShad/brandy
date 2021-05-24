@@ -1,1 +1,1 @@
-export { default } from './produt-suggested';
+export {default} from './produt-suggested';

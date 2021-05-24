@@ -1,1 +1,1 @@
-export { default } from './category-banner';
+export {default} from './category-banner';

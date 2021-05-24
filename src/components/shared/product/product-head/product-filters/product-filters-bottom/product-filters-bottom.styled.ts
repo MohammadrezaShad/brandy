@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const BottomIcon = styled.span`
-  margin-right: ${({ theme }) => theme.dim[2]};
-  margin-left: ${({ theme }) => theme.dim[2]};
+  margin-right: ${({theme}) => theme.dim[2]};
+  margin-left: ${({theme}) => theme.dim[2]};
 `;
 
 export const BottomWrap = styled.div`

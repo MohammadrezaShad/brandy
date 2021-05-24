@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
 import Compare from '@/assets/vectors/Compare.svg';
 import Carousel from '@/components/shared/carousel';
@@ -13,10 +13,10 @@ const ProductCarousel: FC = () => (
       <Compare />
     </S.IconWrap>
     <S.IconWrap top>
-      <IconProvider icon="wishlist" size="20px" />
+      <IconProvider icon='wishlist' size='20px' />
     </S.IconWrap>
     <Carousel>
-      {Array.from({ length: 5 }, (_, i) => i + 1).map((id) => (
+      {Array.from({length: 5}, (_, i) => i + 1).map(id => (
         <ProductCarouselItem key={id} />
       ))}
     </Carousel>

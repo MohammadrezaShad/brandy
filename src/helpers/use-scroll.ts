@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 type BodyRect = {
   top: number;
@@ -7,7 +7,9 @@ type BodyRect = {
 
 export function useScroll() {
   const [lastScrollTop, setLastScrollTop] = useState<number>(0);
-  const [bodyOffset, setBodyOffset] = useState<DOMRect | BodyRect>(getBodyOffset());
+  const [bodyOffset, setBodyOffset] = useState<DOMRect | BodyRect>(
+    getBodyOffset(),
+  );
   const [scrollY, setScrollY] = useState<number>(bodyOffset.top);
   const [scrollX, setScrollX] = useState<number>(bodyOffset.left);
   const [scrollDirection, setScrollDirection] = useState<undefined | string>();
@@ -22,7 +24,7 @@ export function useScroll() {
 
   function getBodyOffset(): DOMRect | BodyRect {
     return typeof window === 'undefined' || !window.document
-      ? { top: 0, left: 0 }
+      ? {top: 0, left: 0}
       : document.body.getBoundingClientRect();
   }
 

@@ -1,1 +1,1 @@
-export { default } from './card-header';
+export {default} from './card-header';

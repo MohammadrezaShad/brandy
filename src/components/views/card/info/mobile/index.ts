@@ -1,1 +1,1 @@
-export { default } from './info-view';
+export {default} from './info-view';

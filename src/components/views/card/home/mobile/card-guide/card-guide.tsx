@@ -1,19 +1,26 @@
 import useTranslation from 'next-translate/useTranslation';
-import { FC } from 'react';
+import {FC} from 'react';
 
 import Delivery from '@/assets/vectors/Delivery.svg';
 import Orginal from '@/assets/vectors/Orginal.svg';
 import Return from '@/assets/vectors/Return.svg';
 import Typography from '@/components/shared/typography';
-import { typographyColor, typographyVariant } from '@/constants/typography-config';
+import {
+  typographyColor,
+  typographyVariant,
+} from '@/constants/typography-config';
 
 import * as S from './card-guide.styled';
 
 const CardGuide: FC = () => {
-  const { t } = useTranslation('common');
+  const {t} = useTranslation('common');
   return (
     <S.Wrapper>
-      <Typography variant={typographyVariant.SUBTITLE_MD_NORMAL} color={typographyColor.PRIMARY} gutterBottom={2}>
+      <Typography
+        variant={typographyVariant.SUBTITLE_MD_NORMAL}
+        color={typographyColor.PRIMARY}
+        gutterBottom={2}
+      >
         {t('cardGuide')}
       </Typography>
       <S.Tags>
@@ -21,7 +28,11 @@ const CardGuide: FC = () => {
           <S.Tag>
             <Orginal />
           </S.Tag>
-          <Typography variant={typographyVariant.SUBTITLE_XS_NORMAL} color={typographyColor.PRIMARY} gutterTop={1}>
+          <Typography
+            variant={typographyVariant.SUBTITLE_XS_NORMAL}
+            color={typographyColor.PRIMARY}
+            gutterTop={1}
+          >
             {t('productOriginalProductWarranty')}
           </Typography>
         </S.TagWrap>
@@ -29,7 +40,11 @@ const CardGuide: FC = () => {
           <S.Tag>
             <Return />
           </S.Tag>
-          <Typography variant={typographyVariant.SUBTITLE_XS_NORMAL} color={typographyColor.PRIMARY} gutterTop={1}>
+          <Typography
+            variant={typographyVariant.SUBTITLE_XS_NORMAL}
+            color={typographyColor.PRIMARY}
+            gutterTop={1}
+          >
             {t('productReturnWarranty')}
           </Typography>
         </S.TagWrap>
@@ -37,7 +52,11 @@ const CardGuide: FC = () => {
           <S.Tag>
             <Delivery />
           </S.Tag>
-          <Typography variant={typographyVariant.SUBTITLE_XS_NORMAL} color={typographyColor.PRIMARY} gutterTop={1}>
+          <Typography
+            variant={typographyVariant.SUBTITLE_XS_NORMAL}
+            color={typographyColor.PRIMARY}
+            gutterTop={1}
+          >
             {t('fastAndEasyDelivery')}
           </Typography>
         </S.TagWrap>

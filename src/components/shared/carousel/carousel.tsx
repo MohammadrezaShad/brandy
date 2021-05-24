@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 
 import ArrowLeft from '@/assets/vectors/F-Left.svg';
 import ArrowRight from '@/assets/vectors/F-Right.svg';
@@ -11,7 +11,7 @@ type CarouselProps = {
   children: unknown;
 };
 
-const Carousel: FC<CarouselProps> = ({ children }) => {
+const Carousel: FC<CarouselProps> = ({children}) => {
   const carouselSlides = React.Children.toArray(children);
   const {
     handleSwipe,
@@ -26,7 +26,10 @@ const Carousel: FC<CarouselProps> = ({ children }) => {
     <S.Wrapper>
       <S.Arrow as={ArrowRight} onClick={handleSlideRight} />
       <S.Content {...handleSwipe}>
-        <S.Wrap activeCarouselItemIndex={activeCarouselItemIndex} hasCraouselAnimate={hasCraouselAnimate}>
+        <S.Wrap
+          activeCarouselItemIndex={activeCarouselItemIndex}
+          hasCraouselAnimate={hasCraouselAnimate}
+        >
           {carouselSlides.map((carouselSlide, index) => (
             <S.CarouselItem key={index}>{carouselSlide}</S.CarouselItem>
           ))}
@@ -34,7 +37,11 @@ const Carousel: FC<CarouselProps> = ({ children }) => {
         </S.Wrap>
         <S.PaginationWrap>
           {carouselSlides.map((_, index) => (
-            <S.PaginationItem key={index} onClick={() => handleSlideJump(index)} selectedSlide={current === index} />
+            <S.PaginationItem
+              key={index}
+              onClick={() => handleSlideJump(index)}
+              selectedSlide={current === index}
+            />
           ))}
         </S.PaginationWrap>
       </S.Content>

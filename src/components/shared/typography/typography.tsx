@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 
 import {
   typographyColor,

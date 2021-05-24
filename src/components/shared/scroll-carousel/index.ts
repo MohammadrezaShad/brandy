@@ -1,1 +1,1 @@
-export { default } from './scroll-carousel';
+export {default} from './scroll-carousel';

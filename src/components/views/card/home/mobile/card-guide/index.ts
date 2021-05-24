@@ -1,1 +1,1 @@
-export { default } from './card-guide';
+export {default} from './card-guide';

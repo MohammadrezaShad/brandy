@@ -1,1 +1,1 @@
-export { default } from './card-layout';
+export {default} from './card-layout';

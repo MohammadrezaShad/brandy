@@ -1,1 +1,1 @@
-export { default } from './card-send-method';
+export {default} from './card-send-method';

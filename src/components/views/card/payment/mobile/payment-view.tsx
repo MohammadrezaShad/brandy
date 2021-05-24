@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
-import { FC, useState } from 'react';
+import {FC, useState} from 'react';
 
-import { buttonSizes } from '@/constants/button-config';
+import {buttonSizes} from '@/constants/button-config';
 import Button from '@/shared/button';
 
 import PaymentGateway from './payment-gateway';
@@ -17,15 +17,23 @@ export enum GatewayValues {
 }
 
 const PaymentView: FC = () => {
-  const [selectedGatewayId, setSelectedGatewayId] = useState(GatewayValues.Mellat);
-  const { t } = useTranslation('common');
+  const [selectedGatewayId, setSelectedGatewayId] = useState(
+    GatewayValues.Mellat,
+  );
+  const {t} = useTranslation('common');
   return (
     <>
       <S.Wrap>
-        <PaymentGateway selectedGatewayId={selectedGatewayId} setSelectedGatewayId={setSelectedGatewayId} />
+        <PaymentGateway
+          selectedGatewayId={selectedGatewayId}
+          setSelectedGatewayId={setSelectedGatewayId}
+        />
       </S.Wrap>
       <S.Wrap>
-        <PaymentWallet selectedGatewayId={selectedGatewayId} setSelectedGatewayId={setSelectedGatewayId} />
+        <PaymentWallet
+          selectedGatewayId={selectedGatewayId}
+          setSelectedGatewayId={setSelectedGatewayId}
+        />
       </S.Wrap>
       <S.Wrap>
         <PaymentOverview />

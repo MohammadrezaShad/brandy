@@ -1,13 +1,16 @@
 import Trans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
 
-import { typographyColor, typographyDisplay } from '@/constants/typography-config';
+import {
+  typographyColor,
+  typographyDisplay,
+} from '@/constants/typography-config';
 import Typography from '@/shared/typography';
 
 import * as S from './payment-overview.styled';
 
 const PaymentOverview = () => {
-  const { t } = useTranslation('common');
+  const {t} = useTranslation('common');
   return (
     <>
       <S.Content>
@@ -18,13 +21,18 @@ const PaymentOverview = () => {
           </Typography>
         </S.Wrap>
         <S.Wrap>
-          <Typography color={typographyColor.ON_ERROR}>{t('currency')}</Typography>
+          <Typography color={typographyColor.ON_ERROR}>
+            {t('currency')}
+          </Typography>
           <Typography color={typographyColor.ON_ERROR}>
             {(5390000).toLocaleString('de-DE')} -{t('currency')}
           </Typography>
         </S.Wrap>
         <S.Wrap>
-          <Typography color={typographyColor.ON_SUCCESS}> {t('wallet')} </Typography>
+          <Typography color={typographyColor.ON_SUCCESS}>
+            {' '}
+            {t('wallet')}{' '}
+          </Typography>
           <Typography color={typographyColor.ON_SUCCESS}>
             {(5390000).toLocaleString('de-DE')} -{t('currency')}
           </Typography>
@@ -40,11 +48,26 @@ const PaymentOverview = () => {
       <S.Terms>
         <Typography color={typographyColor.PRIMARY}>
           <Trans
-            i18nKey="common:cardPaymentTerms"
+            i18nKey='common:cardPaymentTerms'
             components={{
-              p: <Typography color={typographyColor.ON_SURFACE} display={typographyDisplay.INLINE} />,
-              t: <Typography color={typographyColor.ON_SUCCESS} display={typographyDisplay.INLINE} />,
-              b: <Typography color={typographyColor.ON_SURFACE} display={typographyDisplay.INLINE} />,
+              p: (
+                <Typography
+                  color={typographyColor.ON_SURFACE}
+                  display={typographyDisplay.INLINE}
+                />
+              ),
+              t: (
+                <Typography
+                  color={typographyColor.ON_SUCCESS}
+                  display={typographyDisplay.INLINE}
+                />
+              ),
+              b: (
+                <Typography
+                  color={typographyColor.ON_SURFACE}
+                  display={typographyDisplay.INLINE}
+                />
+              ),
             }}
           />
         </Typography>

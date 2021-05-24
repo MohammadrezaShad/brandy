@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-destructuring */
 import camelcase from 'camelcase';
-import React, { FC, useContext } from 'react';
-import ReactSelect, { ActionMeta, OptionsType } from 'react-select';
-import { ThemeContext } from 'styled-components';
+import React, {FC, useContext} from 'react';
+import ReactSelect, {ActionMeta, OptionsType} from 'react-select';
+import {ThemeContext} from 'styled-components';
 
 import * as S from './select.styled';
 
-type SelectOption = { label: string; value: number };
-type OnChange = (value: OptionsType<SelectOption>, actionMeta: ActionMeta<SelectOption>) => void;
+type SelectOption = {label: string; value: number};
+type OnChange = (
+  value: OptionsType<SelectOption>,
+  actionMeta: ActionMeta<SelectOption>,
+) => void;
 
 type SelectProps = {
   options: OptionsType<SelectOption>;
@@ -59,22 +62,29 @@ const Select: FC<SelectProps> = ({
         margin: 0,
       };
 
-      fontStyles.forEach((element) => {
+      fontStyles.forEach(element => {
         const splited = element.split(':');
         output[camelcase(splited[0])] = splited[1];
       });
 
       return output;
     },
-    dropdownIndicator: (provided: any, state: { selectProps: { menuIsOpen: any } }) => ({
+    dropdownIndicator: (
+      provided: any,
+      state: {selectProps: {menuIsOpen: any}},
+    ) => ({
       ...provided,
       padding: themeContext.dim[1],
       paddingRight: 0,
       SVG: {
-        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0)',
+        transform: state.selectProps.menuIsOpen
+          ? 'rotate(180deg)'
+          : 'rotate(0)',
       },
       PATH: {
-        fill: state.selectProps.menuIsOpen ? themeContext.palette.primary : themeContext.palette.primary,
+        fill: state.selectProps.menuIsOpen
+          ? themeContext.palette.primary
+          : themeContext.palette.primary,
       },
     }),
     valueContainer: (provided: any) => ({
@@ -103,21 +113,27 @@ const Select: FC<SelectProps> = ({
         borderTop: `1px solid ${themeContext.palette.strokeVariant}`,
       },
     }),
-    option: (provided: any, state: { isSelected: boolean }) => {
+    option: (provided: any, state: {isSelected: boolean}) => {
       const fontStyles = themeContext.typography.bodyMdNormal.split(';');
 
       const output = {
         ...provided,
-        color: state.isSelected ? themeContext.palette.onPrimary : themeContext.palette.onPrimary,
-        backgroundColor: state.isSelected ? themeContext.palette.back : themeContext.palette.onBack,
+        color: state.isSelected
+          ? themeContext.palette.onPrimary
+          : themeContext.palette.onPrimary,
+        backgroundColor: state.isSelected
+          ? themeContext.palette.back
+          : themeContext.palette.onBack,
         margin: 0,
         ':hover': {
           cursor: 'pointer',
-          backgroundColor: state.isSelected ? themeContext.palette.back : themeContext.palette.stroke,
+          backgroundColor: state.isSelected
+            ? themeContext.palette.back
+            : themeContext.palette.stroke,
         },
       };
 
-      fontStyles.forEach((element) => {
+      fontStyles.forEach(element => {
         const splited = element.split(':');
         output[camelcase(splited[0])] = splited[1];
       });
@@ -131,7 +147,7 @@ const Select: FC<SelectProps> = ({
       styles={customStyles}
       as={ReactSelect}
       options={options}
-      classNamePrefix="select"
+      classNamePrefix='select'
       defaultValue={value}
       isDisabled={isDisabled}
       isClearable={isClearable}

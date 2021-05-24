@@ -1,1 +1,1 @@
-export { default } from './brand-layout';
+export {default} from './brand-layout';

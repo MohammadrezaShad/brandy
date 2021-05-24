@@ -1,1 +1,1 @@
-export { default } from './brand-category';
+export {default} from './brand-category';

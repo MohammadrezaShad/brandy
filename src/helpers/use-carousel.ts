@@ -1,14 +1,21 @@
 /* eslint-disable no-param-reassign */
-import { useState } from 'react';
-import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
+import {useState} from 'react';
+import {SwipeableHandlers, useSwipeable} from 'react-swipeable';
 
-const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex = 0) => {
+const useCarousel = (
+  carouselItemLength: number,
+  intialActiveCarouselItemIndex = 0,
+) => {
   const MOVE_PER_SLIDE = 1;
-  const [activeCarouselItemIndex, setActiveCarouselItemIndex] = useState<number>(intialActiveCarouselItemIndex);
+  const [
+    activeCarouselItemIndex,
+    setActiveCarouselItemIndex,
+  ] = useState<number>(intialActiveCarouselItemIndex);
   const [hasCraouselAnimate, setHasCraouselAnimate] = useState<boolean>(true);
-  const [finalActiveCarouselItemIndex, setFinalActiveCarouselItemIndex] = useState<number>(
-    intialActiveCarouselItemIndex,
-  );
+  const [
+    finalActiveCarouselItemIndex,
+    setFinalActiveCarouselItemIndex,
+  ] = useState<number>(intialActiveCarouselItemIndex);
 
   const handleSwipe: SwipeableHandlers = useSwipeable({
     onSwipedLeft: () => handleSlideRight(),
@@ -41,8 +48,12 @@ const useCarousel = (carouselItemLength: number, intialActiveCarouselItemIndex =
   const isSlideAllowed = () => carouselItemLength > 1;
 
   const isExceptionSlide = (targetIndex: number) =>
-    (targetIndex === 1 && finalActiveCarouselItemIndex === 0 && activeCarouselItemIndex === carouselItemLength) ||
-    (targetIndex < 0 && finalActiveCarouselItemIndex === 0 && activeCarouselItemIndex !== carouselItemLength);
+    (targetIndex === 1 &&
+      finalActiveCarouselItemIndex === 0 &&
+      activeCarouselItemIndex === carouselItemLength) ||
+    (targetIndex < 0 &&
+      finalActiveCarouselItemIndex === 0 &&
+      activeCarouselItemIndex !== carouselItemLength);
 
   const handleExceptionSlide = (targetIndex: number) => {
     setHasCraouselAnimate(false);

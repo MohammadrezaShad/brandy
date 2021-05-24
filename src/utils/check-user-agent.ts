@@ -1,4 +1,4 @@
-import { DeviceTypes } from '@/constants/device-types';
+import {DeviceTypes} from '@/constants/device-types';
 
 const CheckUserAgent = (userAgent: string) => {
   const regex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;

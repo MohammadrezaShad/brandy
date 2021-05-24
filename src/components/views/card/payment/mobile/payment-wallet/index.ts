@@ -1,1 +1,1 @@
-export { default } from './payment-wallet';
+export {default} from './payment-wallet';

@@ -1,1 +1,1 @@
-export { default } from './brand-view';
+export {default} from './brand-view';

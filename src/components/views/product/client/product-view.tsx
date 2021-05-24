@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
 const ProductView: FC = () => <div>ProductDesktopView</div>;
 

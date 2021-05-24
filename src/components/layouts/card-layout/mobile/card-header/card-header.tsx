@@ -1,10 +1,14 @@
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
-import { FC, useState } from 'react';
+import {FC, useState} from 'react';
 
 import ArrowRight from '@/assets/vectors/F-Right.svg';
 import Tabs from '@/components/shared/tabs';
-import { typographyAlign, typographyDisplay, typographyVariant } from '@/constants/typography-config';
+import {
+  typographyAlign,
+  typographyDisplay,
+  typographyVariant,
+} from '@/constants/typography-config';
 import Typography from '@/shared/typography';
 import Paths from '@/utils/paths';
 
@@ -15,8 +19,8 @@ const CardHeader: FC = () => {
   const handleTabChange = (tabIndex: number): void => {
     setSelectedTabIndex(tabIndex);
   };
-  const { pathname, back } = useRouter();
-  const { t } = useTranslation('common');
+  const {pathname, back} = useRouter();
+  const {t} = useTranslation('common');
   return (
     <S.Head>
       <S.ArrowRight as={ArrowRight} onClick={() => back()} />
@@ -24,8 +28,8 @@ const CardHeader: FC = () => {
         <S.TabWrap>
           <Tabs
             tabItems={[
-              { id: 1, text: t('card') },
-              { id: 2, text: t('favorites') },
+              {id: 1, text: t('card')},
+              {id: 2, text: t('favorites')},
             ]}
             selectedTabIndex={selectedTabIndex}
             handleTabChange={handleTabChange}

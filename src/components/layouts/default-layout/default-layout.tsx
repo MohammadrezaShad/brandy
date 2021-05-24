@@ -1,10 +1,17 @@
-import React, { FC } from 'react';
-import { GetLayout, LayoutProps } from 'src/types/main';
+import {FC} from 'react';
 
-const DefaultLayout: FC<LayoutProps> = ({ children, deviceType }) => <>{children}</>;
+import {GetLayout, LayoutProps} from '@/types/main';
+
+import * as S from './default-layout.styled';
+
+const DefaultLayout: FC<LayoutProps> = ({children}) => (
+  <S.Wrapper>
+    <S.Container>{children}</S.Container>
+  </S.Wrapper>
+);
+
+export default DefaultLayout;
 
 export const getDefaultLayout: GetLayout = (page, deviceType) => (
   <DefaultLayout deviceType={deviceType}>{page}</DefaultLayout>
 );
-
-export default DefaultLayout;

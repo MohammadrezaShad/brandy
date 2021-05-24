@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import { set } from 'js-cookie';
+import {set} from 'js-cookie';
 
 export async function getCookie(cookiename: string, cookiestring: string) {
   const name = `${cookiename}=`;
@@ -17,5 +17,5 @@ export async function getCookie(cookiename: string, cookiestring: string) {
   return '';
 }
 export function setCookie(cookiename: string, cookievalue: string) {
-  set(cookiename, cookievalue, { expires: 365 });
+  set(cookiename, cookievalue, {expires: 365});
 }

@@ -1,6 +1,10 @@
-import { configureStore, EnhancedStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { createWrapper, MakeStore } from 'next-redux-wrapper';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import {
+  configureStore,
+  EnhancedStore,
+  getDefaultMiddleware,
+} from '@reduxjs/toolkit';
+import {createWrapper, MakeStore} from 'next-redux-wrapper';
+import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 
 import rootReducer from './root-reducer';
 

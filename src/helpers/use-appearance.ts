@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
-import { AppearanceModes } from '@/constants/appearance-modes';
+import {AppearanceModes} from '@/constants/appearance-modes';
 
 export function useAppearance() {
-  const [isAppearanceModalShow, setIsAppearanceModalShow] = useState<boolean>(false);
-  const [appearanceMode, setAppearanceMode] = useState(AppearanceModes.VIEW_TWO);
+  const [isAppearanceModalShow, setIsAppearanceModalShow] = useState<boolean>(
+    false,
+  );
+  const [appearanceMode, setAppearanceMode] = useState(
+    AppearanceModes.VIEW_TWO,
+  );
 
   const handleCloseAppearanceModal = () => {
     setIsAppearanceModalShow(false);

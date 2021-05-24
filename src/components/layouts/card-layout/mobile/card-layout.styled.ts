@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  direction: ${({ theme }) => theme.defaults.direction};
+  direction: ${({theme}) => theme.defaults.direction};
 `;
 
 export const Container = styled.main`
@@ -12,5 +12,5 @@ export const Container = styled.main`
 `;
 
 export const CardProgress = styled.div`
-  padding: ${({ theme }) => `${theme.dim[4]} ${theme.dim[8]}`};
+  padding: ${({theme}) => `${theme.dim[4]} ${theme.dim[8]}`};
 `;

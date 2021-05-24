@@ -1,7 +1,11 @@
 import convert from 'color-convert';
 import styled from 'styled-components';
 
-import { buttonColors, buttonSizes, buttonVariants } from '@/constants/button-config';
+import {
+  buttonColors,
+  buttonSizes,
+  buttonVariants,
+} from '@/constants/button-config';
 
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
@@ -17,13 +21,13 @@ export const Button = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${({ theme }) => theme.defaults.borderRadiusVariant};
+  border-radius: ${({theme}) => theme.defaults.borderRadiusVariant};
   text-decoration: none;
-  white-space: ${({ textWrap }) => (textWrap ? 'normal' : 'nowrap')};
+  white-space: ${({textWrap}) => (textWrap ? 'normal' : 'nowrap')};
   cursor: pointer;
-  width: ${({ matchParent }) => (matchParent ? '100%' : null)};
-  opacity: ${({ $disabled }) => ($disabled ? '32%' : 1)};
-  background-color: ${({ $color, theme, variant }) => {
+  width: ${({matchParent}) => (matchParent ? '100%' : null)};
+  opacity: ${({$disabled}) => ($disabled ? '32%' : 1)};
+  background-color: ${({$color, theme, variant}) => {
     if (variant === buttonVariants.LINK) {
       return null;
     }
@@ -39,7 +43,7 @@ export const Button = styled.button<ButtonProps>`
         return theme.palette.onSecondary;
     }
   }};
-  border: ${({ $color, theme, variant }) => {
+  border: ${({$color, theme, variant}) => {
     if (variant === buttonVariants.FILL || variant === buttonVariants.LINK) {
       return null;
     }
@@ -53,7 +57,7 @@ export const Button = styled.button<ButtonProps>`
         return `1px solid ${theme.palette.onSuccess}`;
     }
   }};
-  color: ${({ $color, theme, variant }) => {
+  color: ${({$color, theme, variant}) => {
     if (variant === buttonVariants.LINK || variant === buttonVariants.OUTLINE) {
       switch ($color) {
         case buttonColors.ON_SURFACE:
@@ -72,7 +76,7 @@ export const Button = styled.button<ButtonProps>`
       }
     }
   }};
-  min-height: ${({ size }) => {
+  min-height: ${({size}) => {
     switch (size) {
       case buttonSizes.LARGE:
         return '46px';
@@ -89,7 +93,7 @@ export const Button = styled.button<ButtonProps>`
         return '45px';
     }
   }};
-  padding-right: ${({ size, theme, variant }) => {
+  padding-right: ${({size, theme, variant}) => {
     if (variant === buttonVariants.LINK) {
       return null;
     }
@@ -107,7 +111,7 @@ export const Button = styled.button<ButtonProps>`
         return theme.dim[8];
     }
   }};
-  padding-left: ${({ size, theme, variant }) => {
+  padding-left: ${({size, theme, variant}) => {
     if (variant === buttonVariants.LINK) {
       return null;
     }
@@ -125,7 +129,7 @@ export const Button = styled.button<ButtonProps>`
         return theme.dim[8];
     }
   }};
-  ${({ size, theme }) => {
+  ${({size, theme}) => {
     switch (size) {
       case buttonSizes.MEDIUM:
         return theme.typography.bodyMdMedium;

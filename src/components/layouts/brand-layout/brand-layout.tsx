@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
-import { GetLayout, LayoutProps } from 'src/types/main';
+import React, {FC} from 'react';
+import {GetLayout, LayoutProps} from 'src/types/main';
 
-import { DeviceTypes } from '@/constants/device-types';
+import {DeviceTypes} from '@/constants/device-types';
 import DesktopMainLayout from '@/layouts/brand-layout/client';
 import MobileMainLayout from '@/layouts/brand-layout/mobile';
 
-import { getLayout } from '../main-layout/main-layout';
+import {getLayout} from '../main-layout/main-layout';
 
-const BrandLayout: FC<LayoutProps> = ({ children, deviceType }) =>
+const BrandLayout: FC<LayoutProps> = ({children, deviceType}) =>
   deviceType === DeviceTypes.MOBILE ? (
     <MobileMainLayout>{children}</MobileMainLayout>
   ) : (
@@ -15,6 +15,9 @@ const BrandLayout: FC<LayoutProps> = ({ children, deviceType }) =>
   );
 
 export const getBrandLayout: GetLayout = (page, deviceType) =>
-  getLayout(<BrandLayout deviceType={deviceType}>{page}</BrandLayout>, deviceType);
+  getLayout(
+    <BrandLayout deviceType={deviceType}>{page}</BrandLayout>,
+    deviceType,
+  );
 
 export default BrandLayout;

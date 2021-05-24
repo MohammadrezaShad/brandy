@@ -1,1 +1,1 @@
-export { default } from './card-progress';
+export {default} from './card-progress';

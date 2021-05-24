@@ -1,4 +1,5 @@
-const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+const getScrollbarWidth = () =>
+  window.innerWidth - document.documentElement.clientWidth;
 
 export const disableBodyScroll = () => {
   document.body.style.paddingRight = `${getScrollbarWidth()}px`;

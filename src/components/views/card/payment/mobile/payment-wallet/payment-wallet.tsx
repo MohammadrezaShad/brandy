@@ -1,12 +1,16 @@
 import useTranslation from 'next-translate/useTranslation';
-import React, { Dispatch, FC, SetStateAction } from 'react';
+import React, {Dispatch, FC, SetStateAction} from 'react';
 
 import Wallet from '@/assets/vectors/Wallet.svg';
-import { typographyColor, typographyDisplay, typographyVariant } from '@/constants/typography-config';
+import {
+  typographyColor,
+  typographyDisplay,
+  typographyVariant,
+} from '@/constants/typography-config';
 import Radio from '@/shared/form/radio';
 import Typography from '@/shared/typography';
 
-import { GatewayValues } from '../payment-view';
+import {GatewayValues} from '../payment-view';
 import * as S from './payment-wallet.styled';
 
 type PaymentWalletProps = {
@@ -14,8 +18,11 @@ type PaymentWalletProps = {
   setSelectedGatewayId: Dispatch<SetStateAction<GatewayValues>>;
 };
 
-const PaymentWallet: FC<PaymentWalletProps> = ({ selectedGatewayId, setSelectedGatewayId }) => {
-  const { t } = useTranslation('common');
+const PaymentWallet: FC<PaymentWalletProps> = ({
+  selectedGatewayId,
+  setSelectedGatewayId,
+}) => {
+  const {t} = useTranslation('common');
   return (
     <S.Wrap>
       <Radio
@@ -26,7 +33,11 @@ const PaymentWallet: FC<PaymentWalletProps> = ({ selectedGatewayId, setSelectedG
         <Wallet />
       </S.IconWrap>
       <S.Content>
-        <Typography gutterBottom={1} variant={typographyVariant.BODY_MD_MEDIUM} display={typographyDisplay.BLOCK}>
+        <Typography
+          gutterBottom={1}
+          variant={typographyVariant.BODY_MD_MEDIUM}
+          display={typographyDisplay.BLOCK}
+        >
           {t('walletWithdraw')}
         </Typography>
         <Typography

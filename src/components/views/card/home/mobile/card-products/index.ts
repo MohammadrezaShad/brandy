@@ -1,1 +1,1 @@
-export { default } from './card-products';
+export {default} from './card-products';

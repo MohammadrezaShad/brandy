@@ -1,8 +1,8 @@
-import { FC, ReactChild, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import {FC, ReactChild, useEffect, useState} from 'react';
+import {createPortal} from 'react-dom';
 
-import { canUseDOM } from '@/utils/can-use-dom';
-import { disableBodyScroll, enableBodyScroll } from '@/utils/toggle-body-scroll';
+import {canUseDOM} from '@/utils/can-use-dom';
+import {disableBodyScroll, enableBodyScroll} from '@/utils/toggle-body-scroll';
 
 import * as S from './dialog.styled';
 
@@ -12,7 +12,7 @@ type DialogProps = {
   children: unknown | string | ReactChild;
 };
 
-const Dialog: FC<DialogProps> = ({ open, onClose, children }) => {
+const Dialog: FC<DialogProps> = ({open, onClose, children}) => {
   const [isDialogShow, setIsDialogShow] = useState<boolean>(false);
 
   const handleCloseDialog = (): void => {

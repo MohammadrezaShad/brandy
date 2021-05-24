@@ -16,7 +16,6 @@ export const Container = styled.div<{starRate: number}>`
 export const StarWrap = styled.span``;
 
 export const Wrapper = styled.div`
-  background-color: red;
   position: absolute;
   overflow: hidden;
   top: 0;

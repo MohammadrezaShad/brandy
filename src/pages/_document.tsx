@@ -1,5 +1,11 @@
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
+import {ServerStyleSheet} from 'styled-components';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -10,7 +16,7 @@ class MyDocument extends Document {
       // eslint-disable-next-line no-param-reassign
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -32,11 +38,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="/font/style.css" rel="stylesheet" />
+          <link href='/font/style.css' rel='stylesheet' />
         </Head>
         <body>
           <Main />
-          <div id="portal" />
+          <div id='portal' />
           <NextScript />
         </body>
       </Html>

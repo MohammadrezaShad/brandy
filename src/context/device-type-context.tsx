@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { DeviceTypes } from '@/constants/device-types';
-import { ValueOf } from '@/types/main';
+import {DeviceTypes} from '@/constants/device-types';
+import {ValueOf} from '@/types/main';
 
 type DeviceTypeContextProps = {
   deviceType?: ValueOf<typeof DeviceTypes>;

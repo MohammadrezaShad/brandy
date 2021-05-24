@@ -1,6 +1,6 @@
-import { FC, ReactChild, ReactNode, useEffect } from 'react';
+import {FC, ReactChild, ReactNode, useEffect} from 'react';
 
-import { disableBodyScroll, enableBodyScroll } from '@/utils/toggle-body-scroll';
+import {disableBodyScroll, enableBodyScroll} from '@/utils/toggle-body-scroll';
 
 import * as S from './drawer.styled';
 
@@ -10,7 +10,7 @@ type DrawerProps = {
   openDrawer: boolean;
 };
 
-const Drawer: FC<DrawerProps> = ({ children, handleCloseDrawer, openDrawer }) => {
+const Drawer: FC<DrawerProps> = ({children, handleCloseDrawer, openDrawer}) => {
   useEffect(() => {
     if (openDrawer) {
       disableBodyScroll();

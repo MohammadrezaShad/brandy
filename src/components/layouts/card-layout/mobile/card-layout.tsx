@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
 import CardHeader from './card-header';
 import * as S from './card-layout.styled';
@@ -8,7 +8,7 @@ type CardLayoutProps = {
   children: unknown;
 };
 
-const CardLayout: FC<CardLayoutProps> = ({ children }) => (
+const CardLayout: FC<CardLayoutProps> = ({children}) => (
   <S.Wrapper>
     <CardHeader />
     <S.CardProgress>

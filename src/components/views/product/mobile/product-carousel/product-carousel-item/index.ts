@@ -1,1 +1,1 @@
-export { default } from './product-carousel-item';
+export {default} from './product-carousel-item';

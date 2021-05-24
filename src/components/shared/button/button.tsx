@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { FC, MouseEvent } from 'react';
+import React, {FC, MouseEvent} from 'react';
 
-import { buttonColors, buttonSizes, buttonVariants } from '@/constants/button-config';
+import {
+  buttonColors,
+  buttonSizes,
+  buttonVariants,
+} from '@/constants/button-config';
 
 import * as S from './button.styled';
 

@@ -1,20 +1,20 @@
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
-import { FC } from 'react';
+import {FC} from 'react';
 
 import Button from '@/components/shared/button';
-import { buttonSizes } from '@/constants/button-config';
+import {buttonSizes} from '@/constants/button-config';
 import Paths from '@/utils/paths';
 
 import CardDiscounts from './card-discounts';
 import CardGuide from './card-guide';
 import CardPayInfo from './card-pay-info';
 import CardProducts from './card-products';
-import * as S from './card-view.stled';
+import * as S from './card-view.styled';
 
 const CardView: FC = () => {
-  const { t } = useTranslation('common');
-  const { push } = useRouter();
+  const {t} = useTranslation('common');
+  const {push} = useRouter();
   return (
     <S.Wrapper>
       <S.InfoWrap>
@@ -31,7 +31,11 @@ const CardView: FC = () => {
       </S.GuideWrap>
       <S.Button>
         <Button
-          onClick={() => push({ pathname: Paths.card.info.getPath() }, undefined, { scroll: false })}
+          onClick={() =>
+            push({pathname: Paths.card.info.getPath()}, undefined, {
+              scroll: false,
+            })
+          }
           matchParent
           size={buttonSizes.LARGE}
         >

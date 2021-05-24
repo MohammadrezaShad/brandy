@@ -6,6 +6,6 @@ export const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   &:not(:last-child) {
-    margin-bottom: ${({ theme }) => theme.dim[2]};
+    margin-bottom: ${({theme}) => theme.dim[2]};
   }
 `;

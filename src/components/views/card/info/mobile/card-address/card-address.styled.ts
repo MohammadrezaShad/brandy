@@ -8,11 +8,12 @@ export const Head = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: ${({ theme }) => theme.dim[2]};
-  background-color: ${({ theme }) => `rgb(${convert.hex.rgb(theme.palette.onBack)},0.7)`};
-  margin-top: ${({ theme }) => theme.dim[2]};
-  border-radius: ${({ theme }) => theme.defaults.borderRadiusVariant};
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
+  padding: ${({theme}) => theme.dim[2]};
+  background-color: ${({theme}) =>
+    `rgb(${convert.hex.rgb(theme.palette.onBack)},0.7)`};
+  margin-top: ${({theme}) => theme.dim[2]};
+  border-radius: ${({theme}) => theme.defaults.borderRadiusVariant};
+  border: 1px solid ${({theme}) => theme.palette.stroke};
 `;
 
 export const Icon = styled.span`

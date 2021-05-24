@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 type Payload = {
   id: string;
@@ -12,11 +12,11 @@ export const counterSlice = createSlice({
     value: 0,
   } as State,
   reducers: {
-    increment: (state, { payload }: PayloadAction<Payload>) => {
+    increment: (state, {payload}: PayloadAction<Payload>) => {
       console.log(payload);
       state.value += 1;
     },
-    decrement: (state) => {
+    decrement: state => {
       state.value -= 1;
     },
     incrementByAmount: (state, action) => {
@@ -26,6 +26,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const {increment, decrement, incrementByAmount} = counterSlice.actions;
 
 export default counterSlice.reducer;

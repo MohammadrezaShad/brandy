@@ -12,7 +12,7 @@ export const Wrap = styled.section`
 
 export const Layout = styled.div`
   position: relative;
-  padding: ${({ theme }) => theme.dim[2]};
+  padding: ${({theme}) => theme.dim[2]};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ export const Backdrop = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: ${({ theme }) => theme.palette.overlay};
+  background-color: ${({theme}) => theme.palette.overlay};
   opacity: 0.5;
   z-index: 1;
 `;

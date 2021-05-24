@@ -9,7 +9,11 @@ module.exports = nextTranslate({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
+    config.module.rules.push({
+      test: /\.ts?$/,
+      loader: 'stylelint-custom-processor-loader',
+      exclude: /node_modules/,
+    });
     return config;
   },
 });

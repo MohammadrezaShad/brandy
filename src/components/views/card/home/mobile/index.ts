@@ -1,1 +1,1 @@
-export { default } from './card-view';
+export {default} from './card-view';

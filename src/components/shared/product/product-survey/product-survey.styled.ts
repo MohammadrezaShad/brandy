@@ -1,13 +1,8 @@
+import convert from 'color-convert';
 import styled from 'styled-components';
 
-export const Wrap = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
-
 export const Content = styled.div`
-  flex: 2;
-  padding-left: ${({theme}) => theme.dim[1]};
+  width: 100%;
 `;
 
 export const TextWrap = styled.div`
@@ -46,44 +41,12 @@ export const RateProgress = styled.div<{progress: string; secondary?: boolean}>`
     secondary ? theme.palette.secondary : theme.palette.primary};
 `;
 
-export const Comments = styled.div`
-  margin-top: ${({theme}) => theme.dim[2]};
-`;
-
-export const Comment = styled.div`
+export const RateProgressTrack = styled.div<{secondary?: boolean}>`
   display: flex;
-  flex-direction: column;
-  border: 1px solid ${({theme}) => theme.palette.stroke};
+  flex: 1;
+  background-color: ${({theme, secondary}) =>
+    secondary
+      ? `rgb(${convert.hex.rgb(theme.palette.secondary)},0.12)`
+      : `rgb(${convert.hex.rgb(theme.palette.primary)},0.03)`};
   border-radius: ${({theme}) => theme.defaults.borderRadiusVariant};
-  padding: ${({theme}) => theme.dim[2]};
-  flex: 0 0 331px;
-  &:not(:last-child) {
-    margin-left: ${({theme}) => theme.dim[2]};
-  }
-`;
-
-export const CommentHead = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: ${({theme}) => theme.dim[2]};
-`;
-
-export const CommentBody = styled.div`
-  margin-bottom: ${({theme}) => theme.dim[1]};
-`;
-
-export const CommentFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-`;
-
-export const CommentIcon = styled.span`
-  vertical-align: middle;
-`;
-
-export const RateStar = styled.div`
-  margin-bottom: ${({theme}) => theme.dim[1]};
 `;

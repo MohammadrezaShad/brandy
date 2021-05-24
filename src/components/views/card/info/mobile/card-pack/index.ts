@@ -1,1 +1,1 @@
-export { default } from './card-pack';
+export {default} from './card-pack';

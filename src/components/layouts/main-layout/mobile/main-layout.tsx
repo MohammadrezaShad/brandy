@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 
 import Header from '@/layouts/main-layout/mobile/header';
 
@@ -8,7 +8,7 @@ type MainLayoutProps = {
   children: unknown;
 };
 
-const MainLayout: FC<MainLayoutProps> = ({ children }) => (
+const MainLayout: FC<MainLayoutProps> = ({children}) => (
   <S.Wrapper>
     <Header />
     <S.Container>{children}</S.Container>

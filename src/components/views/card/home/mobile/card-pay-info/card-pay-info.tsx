@@ -1,12 +1,12 @@
 import useTranslation from 'next-translate/useTranslation';
 
 import Typography from '@/components/shared/typography';
-import { typographyColor } from '@/constants/typography-config';
+import {typographyColor} from '@/constants/typography-config';
 
 import * as S from './card-pay-info.styled';
 
 const CardPayInfo = () => {
-  const { t } = useTranslation('common');
+  const {t} = useTranslation('common');
   return (
     <S.Wrapper>
       <S.Wrap>
