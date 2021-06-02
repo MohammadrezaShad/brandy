@@ -11,6 +11,7 @@ export const Wrap = styled.div`
 export const Block = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: center;
   flex: 0 0 65px;
   min-width: 0;
 `;

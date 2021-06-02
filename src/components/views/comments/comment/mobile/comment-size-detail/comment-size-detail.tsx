@@ -33,6 +33,7 @@ const CommentSizeDetail: FC<CommentSizeDetailProps> = () => {
               autocomplete='off'
               placeholder='سانتی متر'
             />
+            <Typography gutterTop={1}>قـد</Typography>
           </S.Block>
           <S.Block>
             <Field
@@ -42,6 +43,7 @@ const CommentSizeDetail: FC<CommentSizeDetailProps> = () => {
               autocomplete='off'
               placeholder='سانتی متر'
             />
+            <Typography gutterTop={1}>نیم تنه</Typography>
           </S.Block>
           <S.Block>
             <Field
@@ -51,6 +53,7 @@ const CommentSizeDetail: FC<CommentSizeDetailProps> = () => {
               autocomplete='off'
               placeholder='سانتی متر'
             />
+            <Typography gutterTop={1}>وزن</Typography>
           </S.Block>
           <S.Block>
             <Field
@@ -60,6 +63,7 @@ const CommentSizeDetail: FC<CommentSizeDetailProps> = () => {
               autocomplete='off'
               placeholder='سانتی متر'
             />
+            <Typography gutterTop={1}>لگن</Typography>
           </S.Block>
         </S.Wrap>
       ) : null}
