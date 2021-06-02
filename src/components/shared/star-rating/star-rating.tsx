@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import {FC, MouseEvent, useState} from 'react';
+import {FC, MouseEvent, useEffect, useState} from 'react';
 
 import EmptyStar from '@/assets/vectors/EStar.svg';
 import FullStar from '@/assets/vectors/FStar.svg';
@@ -12,7 +12,7 @@ type StarRatingProps = {
   getChangedRate?: (newRate: number) => void;
 };
 const StarRating: FC<StarRatingProps> = ({
-  rate = 0,
+  rate,
   readOnly = true,
   getChangedRate,
 }) => {
@@ -30,6 +30,10 @@ const StarRating: FC<StarRatingProps> = ({
     setStarRate(formattedRate);
     getChangedRate && getChangedRate(formattedRate);
   };
+
+  useEffect(() => {
+    setStarRate(rate);
+  }, [rate]);
 
   return (
     <S.Wrap>
