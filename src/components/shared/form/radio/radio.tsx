@@ -9,21 +9,25 @@ type RadioProps = {
   name?: string;
 };
 
-const Radio: FC<RadioProps> = ({children, onChange, name, checked}) => {
-  console.log('Radio');
-  return (
-    <S.Wrap>
-      <S.Layout checked={checked}>
-        <S.Input
-          type='radio'
-          checked={checked}
-          name={name}
-          onChange={onChange}
-        />
-      </S.Layout>
-      {children}
-    </S.Wrap>
-  );
-};
+const Radio: FC<RadioProps> = ({
+  children,
+  onChange,
+  name,
+  checked,
+  ...restProps
+}) => (
+  <S.Wrap>
+    <S.Layout checked={checked}>
+      <S.Input
+        type='radio'
+        checked={checked}
+        name={name}
+        onChange={onChange}
+        {...restProps}
+      />
+    </S.Layout>
+    {children}
+  </S.Wrap>
+);
 
 export default Radio;
