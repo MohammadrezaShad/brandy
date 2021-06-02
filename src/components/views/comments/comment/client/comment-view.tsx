@@ -1,7 +1,9 @@
-import * as S from './comment-view.styled';
+import React, {FC, ReactNode} from 'react';
 
-const CommentView = () => {
-  return <S.Wrapper>CommentView</S.Wrapper>;
+type CommentViewProps = {
+  children?: ReactNode;
 };
+
+const CommentView: FC<CommentViewProps> = () => <div>CommentView</div>;
 
 export default CommentView;
