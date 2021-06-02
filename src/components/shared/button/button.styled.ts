@@ -39,6 +39,8 @@ export const Button = styled.button<ButtonProps>`
         return ` ${theme.palette.onSurface}`;
       case buttonColors.ERROR:
         return ` ${theme.palette.error}`;
+      case buttonColors.STROKE:
+        return ` ${theme.palette.stroke}`;
       default:
         return theme.palette.onSecondary;
     }
@@ -61,7 +63,7 @@ export const Button = styled.button<ButtonProps>`
     if (variant === buttonVariants.LINK || variant === buttonVariants.OUTLINE) {
       switch ($color) {
         case buttonColors.ON_SURFACE:
-          return theme.palette.onSuccess;
+          return theme.palette.onSurface;
 
         case buttonColors.ERROR:
           return theme.palette.onSuccess;
@@ -71,6 +73,8 @@ export const Button = styled.button<ButtonProps>`
       }
     } else {
       switch ($color) {
+        case buttonColors.STROKE:
+          return theme.palette.onSurface;
         default:
           return theme.palette.onSecondary;
       }
