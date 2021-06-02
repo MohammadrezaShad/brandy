@@ -1,6 +1,7 @@
 export const buttonColors = {
   ON_SURFACE: 1,
   ERROR: 2,
+  STROKE: 3,
 };
 
 export const buttonSizes = {

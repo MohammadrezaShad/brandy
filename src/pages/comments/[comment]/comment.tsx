@@ -5,8 +5,8 @@ import {DeviceTypes} from '@/constants/device-types';
 import {getDefaultLayout} from '@/layouts/default-layout/default-layout';
 import {reduxWrap, useTypedSelector} from '@/redux/store';
 import {increment} from '@/slices/test-slice';
-import Client from '@/views/home/client';
-import Mobile from '@/views/home/mobile';
+import Client from '@/views/comments/comment/client';
+import Mobile from '@/views/comments/comment/mobile';
 
 type CommentProps = {
   deviceType: DeviceType;

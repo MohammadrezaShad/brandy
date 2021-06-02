@@ -8,6 +8,7 @@ export const Block = styled.div`
 `;
 
 export const Survey = styled.div`
+  width: 100%;
   border-radius: ${({theme}) => theme.defaults.borderRadiusVariant};
   background-color: ${({theme}) =>
     `rgb(${convert.hex.rgb(theme.palette.onBack)},0.7)`};
@@ -60,4 +61,5 @@ export const TagImage = styled.img``;
 
 export const Rate = styled.div`
   display: flex;
+  align-items: center;
 `;
