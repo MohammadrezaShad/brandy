@@ -16,6 +16,7 @@ const Input: FC<InputProps> = ({
   placeholder,
   paddingRight = 2,
   paddingLeft = 2,
+  ...restProps
 }) => (
   <S.Input
     value={value}
@@ -23,6 +24,7 @@ const Input: FC<InputProps> = ({
     placeholder={placeholder}
     $paddingRight={paddingRight}
     $paddingLeft={paddingLeft}
+    {...restProps}
   />
 );
 
