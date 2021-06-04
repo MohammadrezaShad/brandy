@@ -1,5 +1,6 @@
-import ScrollCarousel from '@/shared/scroll-carousel';
 import React, {FC, ReactNode} from 'react';
+
+import ScrollCarousel from '@/shared/scroll-carousel';
 
 import * as S from './home-products-category.styled';
 
