@@ -15,4 +15,5 @@ export const buttonVariants = {
   FILL: 1,
   OUTLINE: 2,
   LINK: 3,
+  OUTLINE_DARK: 2,
 };
