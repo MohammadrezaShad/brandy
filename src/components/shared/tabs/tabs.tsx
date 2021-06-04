@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 import {FC, memo} from 'react';
 
@@ -20,6 +21,8 @@ type TabsProps = {
   border?: boolean;
   handleTabChange: (index: number) => void;
   tabItems: TabItems[];
+  lightFontSize?: boolean;
+  darkSelect?: boolean;
 };
 
 const Tabs: FC<TabsProps> = ({
@@ -31,6 +34,8 @@ const Tabs: FC<TabsProps> = ({
   selectedTabIndex = 0,
   spaceAround,
   border = true,
+  lightFontSize,
+  darkSelect,
 }) => (
   <S.Wrapper $spaceAround={spaceAround} $border={border}>
     {tabItems.map((tabItem: TabItems, index: number) => (
@@ -38,11 +43,18 @@ const Tabs: FC<TabsProps> = ({
         onClick={() => handleTabChange && handleTabChange(index)}
         key={tabItem.id}
         selected={selectedTabIndex === index}
+        darkSelect={darkSelect}
       >
         <Typography
-          variant={typographyVariant.HEADLINE1}
+          variant={
+            lightFontSize
+              ? typographyVariant.SUBTITLE_MD_NORMAL
+              : typographyVariant.HEADLINE1
+          }
           color={
-            selectedTabIndex === index
+            selectedTabIndex === index && darkSelect
+              ? typographyColor.ON_SURFACE
+              : selectedTabIndex === index
               ? typographyColor.ON_SUCCESS
               : typographyColor.PRIMARY
           }
