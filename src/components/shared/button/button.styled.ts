@@ -49,6 +49,9 @@ export const Button = styled.button<ButtonProps>`
     if (variant === buttonVariants.FILL || variant === buttonVariants.LINK) {
       return null;
     }
+    if (variant === buttonVariants.OUTLINE_DARK) {
+      return `1px solid ${theme.palette.onSurface}`;
+    }
     switch ($color) {
       case buttonColors.ON_SURFACE:
         return `1px solid rgb(${convert.hex.rgb(theme.palette.onSuccess)},0.2)`;
