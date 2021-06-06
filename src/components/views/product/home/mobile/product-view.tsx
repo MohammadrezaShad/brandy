@@ -10,7 +10,7 @@ import {ProductAnchors} from '@/constants/product-anchors';
 import {typographyVariant} from '@/constants/typography-config';
 import Breadcrumbs from '@/shared/breadcrumbs';
 import isElementInViewPort from '@/utils/is-element-in-viewport';
-import ProductCarousel from '@/views/product/mobile/product-carousel';
+import ProductCarousel from '@/views/product/home/mobile/product-carousel';
 
 import ProductDetails from './product-details/product-details';
 import ProductHead from './product-head';

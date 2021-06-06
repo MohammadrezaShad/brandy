@@ -2,21 +2,21 @@ import {GetServerSideProps} from 'next';
 import {DeviceType, ReactComponent} from 'src/types/main';
 
 import {DeviceTypes} from '@/constants/device-types';
-import {getLayout} from '@/layouts/main-layout/main-layout';
-import Client from '@/views/category/client';
-import Mobile from '@/views/category/mobile';
+import {getBrandLayout} from '@/layouts/brand-layout/brand-layout';
+import Client from '@/views/product/brand/client';
+import Mobile from '@/views/product/brand/mobile';
 
-type CategoryProps = {
+type BrandProps = {
   deviceType: DeviceType;
 };
 
-const Category: ReactComponent<CategoryProps> = ({deviceType}) => (
+const Brand: ReactComponent<BrandProps> = ({deviceType}) => (
   <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>
 );
 
-export default Category;
+export default Brand;
 
-Category.getLayout = getLayout;
+Brand.getLayout = getBrandLayout;
 
 export const getServerSideProps: GetServerSideProps = async () => ({
   props: {},

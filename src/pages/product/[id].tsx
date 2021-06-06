@@ -3,8 +3,8 @@ import {DeviceType, ReactComponent} from 'src/types/main';
 
 import {DeviceTypes} from '@/constants/device-types';
 import {getLayout} from '@/layouts/main-layout/main-layout';
-import Client from '@/views/product/client';
-import Mobile from '@/views/product/mobile';
+import Client from '@/views/product/home/client';
+import Mobile from '@/views/product/home/mobile';
 
 type ProductProps = {
   deviceType: DeviceType;
