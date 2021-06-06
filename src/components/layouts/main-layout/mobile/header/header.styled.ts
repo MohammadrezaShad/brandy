@@ -39,3 +39,7 @@ export const HeaderIcon = styled.span`
     margin-right: ${({theme}) => theme.dim[3]};
   }
 `;
+
+export const TabsWrap = styled.div`
+  background-color: ${({theme}) => theme.palette.onBack};
+`;
