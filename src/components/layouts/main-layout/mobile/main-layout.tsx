@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 
-import Header from '@/layouts/main-layout/mobile/header';
-
+import Footer from './footer';
+import Header from './header';
 import * as S from './main-layout.styled';
 
 type MainLayoutProps = {
@@ -12,6 +12,7 @@ const MainLayout: FC<MainLayoutProps> = ({children}) => (
   <S.Wrapper>
     <Header />
     <S.Container>{children}</S.Container>
+    <Footer />
   </S.Wrapper>
 );
 
