@@ -22,6 +22,8 @@ export const Button = styled.button<ButtonProps>`
   align-items: center;
   justify-content: center;
   border-radius: ${({theme}) => theme.defaults.borderRadiusVariant};
+  box-shadow: 2px 4px 7px 0
+    ${({theme}) => `rgb(${convert.hex.rgb(theme.palette.onSurface)},0.1)`};
   text-decoration: none;
   white-space: ${({textWrap}) => (textWrap ? 'normal' : 'nowrap')};
   cursor: pointer;
@@ -41,8 +43,10 @@ export const Button = styled.button<ButtonProps>`
         return ` ${theme.palette.error}`;
       case buttonColors.STROKE:
         return ` ${theme.palette.stroke}`;
+      case buttonColors.BACK:
+        return ` ${theme.palette.back}`;
       default:
-        return theme.palette.onSecondary;
+        return theme.palette.back;
     }
   }};
   border: ${({$color, theme, variant}) => {
@@ -67,7 +71,6 @@ export const Button = styled.button<ButtonProps>`
       switch ($color) {
         case buttonColors.ON_SURFACE:
           return theme.palette.onSurface;
-
         case buttonColors.ERROR:
           return theme.palette.onSuccess;
 
@@ -76,6 +79,8 @@ export const Button = styled.button<ButtonProps>`
       }
     } else {
       switch ($color) {
+        case buttonColors.BACK:
+          return theme.palette.onSurface;
         case buttonColors.STROKE:
           return theme.palette.onSurface;
         default:
