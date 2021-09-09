@@ -53,3 +53,5 @@ export type FiltersProps = {
   changeMaxPriceAction: (coefficient: number) => void;
   removeAllfilters: () => void;
 };
+
+export type Component = React.ElementType | keyof JSX.IntrinsicElements;

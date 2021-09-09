@@ -3,7 +3,7 @@ import React from 'react';
 import {DeviceType, ReactComponent} from 'src/types/main';
 
 import {DeviceTypes} from '@/constants/device-types';
-import {getLayout} from '@/layouts/main-layout/main-layout';
+import {getHomeLayout} from '@/layouts/home-layout/home-layout';
 import {reduxWrap, useTypedSelector} from '@/redux/store';
 import {increment} from '@/slices/test-slice';
 import Client from '@/views/home/client';
@@ -19,7 +19,7 @@ const Home: ReactComponent<HomeProps> = ({deviceType}) => {
   console.log(st);
   return <> {deviceType === DeviceTypes.MOBILE ? <Mobile /> : <Client />}</>;
 };
-Home.getLayout = getLayout;
+Home.getLayout = getHomeLayout;
 
 export default Home;
 

@@ -16,6 +16,7 @@
     "@types/yup": "^0.29.11",
     "axios": "^0.21.1",
     "camelcase": "^6.2.0",
+    "color": "^4.0.1",
     "color-convert": "^2.0.1",
     "formik": "^2.2.8",
     "js-cookie": "^2.2.1",
@@ -31,12 +32,14 @@
     "react-redux": "^7.2.3",
     "react-select": "^4.3.0",
     "react-swipeable": "^6.1.0",
+    "react-transition-group": "^4.4.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/color": "^3.0.2",
     "@types/color-convert": "^2.0.0",
     "@types/js-cookie": "^2.2.6",
     "@types/lodash": "^4.14.168",

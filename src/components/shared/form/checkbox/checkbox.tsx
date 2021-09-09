@@ -6,7 +6,7 @@ import * as S from './checkbox.styled';
 
 type CheckboxProps = {
   children?: unknown;
-  onChange: (event: FormEvent<HTMLInputElement>) => void;
+  onChange?: (event: FormEvent<HTMLInputElement>) => void;
   checked?: boolean;
   name?: string;
 };

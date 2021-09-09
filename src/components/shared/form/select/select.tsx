@@ -110,7 +110,6 @@ const Select: FC<SelectProps> = ({
         top: themeContext.defaults.borderRadiusVariant,
         right: themeContext.dim[2],
         left: themeContext.dim[2],
-        borderTop: `1px solid ${themeContext.palette.strokeVariant}`,
       },
     }),
     option: (provided: any, state: {isSelected: boolean}) => {
@@ -141,7 +140,6 @@ const Select: FC<SelectProps> = ({
       return output;
     },
   };
-
   return (
     <S.Wrapper
       styles={customStyles}
@@ -154,6 +152,7 @@ const Select: FC<SelectProps> = ({
       isSearchable={isSearchable}
       instanceId={instanceId}
       placeholder={placeholder}
+      noOptionsMessage={() => 'موردی یافت نشد'}
       name={name}
       onChange={onChange}
       {...restProps}
