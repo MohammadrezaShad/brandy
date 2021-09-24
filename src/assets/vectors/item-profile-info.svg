@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="19" viewBox="0 0 15 19">
+  <g id="Profile_Info" data-name="Profile Info" transform="translate(-392 -531)">
+    <g id="Ellipse_206" data-name="Ellipse 206" transform="translate(395 531)" fill="#fff" stroke="#999" stroke-width="1.5">
+      <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
+      <circle cx="4.5" cy="4.5" r="3.75" fill="none"/>
+    </g>
+    <g id="Rectangle_623" data-name="Rectangle 623" transform="translate(392 541)" fill="#fff" stroke="#999" stroke-width="1.5">
+      <path d="M7.5,0h0A7.5,7.5,0,0,1,15,7.5v0A1.5,1.5,0,0,1,13.5,9H1.5A1.5,1.5,0,0,1,0,7.5v0A7.5,7.5,0,0,1,7.5,0Z" stroke="none"/>
+      <path d="M7.227.75h.545A6.477,6.477,0,0,1,14.25,7.227v0A1.023,1.023,0,0,1,13.227,8.25H1.773A1.023,1.023,0,0,1,.75,7.227v0A6.477,6.477,0,0,1,7.227.75Z" fill="none"/>
+    </g>
+  </g>
+</svg>
