@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import React, {FC} from 'react';
+import React, {FC, HTMLAttributes} from 'react';
 
 import {
   typographyColor,
@@ -23,7 +23,7 @@ type TypographyProps = {
   color?: string;
   align?: string;
   nowWrap?: boolean;
-};
+} & HTMLAttributes<HTMLElement>;
 
 const Typography: FC<TypographyProps> = ({
   variant = typographyVariant.BODY_MD_NORMAL,
