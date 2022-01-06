@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+    user-select: none;
+  }
+  
+  h1 {
+    margin: 0;
+    background: black;
+    color: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
